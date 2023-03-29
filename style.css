@@ -1,0 +1,53 @@
+/* Barra de navegación */
+
+.navbar {
+  padding: 1rem;
+  background-color: #f263b2;
+}
+
+.navbar-collapse {
+  justify-items: center;
+  justify-content: space-between;
+}
+
+.btn-1 {
+  margin-right: 10px;
+}
+
+.btn-2 {
+  margin-right: 10px;
+}
+#video1embed{
+  position: relative;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+@font-face {
+  font-family: themillion;
+  src: url("../Desarrollo Axel/Fonts/letras.ttf");
+}
+
+@font-face {
+  font-family: themillion1;
+  src: url("../Desarrollo Axel/Fonts/letras1.ttf");
+}
+
+h2{
+  font-family: themillion;
+}
+
+h1{
+  font-family: themillion1;
+}
+
+
+/* Adaptable responsivo 
+Esconder icono para dispositivos chicos  
+*/
+@media screen and (max-width: 767px){
+  .navbar-brand{
+    display: none;
+  }
+  
+}

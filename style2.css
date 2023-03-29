@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: -o-flex; 
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to top right,  #fa689e 0%, #b86ccf 100%);
+}
+
+.centrado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 18px;
+}
+
+.container3{
+    max-width: 600px;
+    background: #ffffff;
+    border-radius: 5px;
+    width: 600px;
+    padding: 20px;
+    box-shadow: 0 2px  2px 30px rgba(0,0,0,0.1);
+
+}
+
+.wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e4e1e1;
+}
+
+.add{
+    text-decoration: none;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: #8bc34a;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Creando clase dinamica */
+.flex{
+    display: flex;
+    gap: 1.5em;
+    margin-bottom: 15px;
+}
+
+.delete{
+    text-decoration: none;
+    display: inline-block;
+    background: red;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    color: white;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+input{
+    padding: 5px 10px;
+    background: #ddd;
+    border: none;
+    width: 50%;
+    border-radius: 5px;
+}
+
+input:focus{
+    outline: 1px solid #efefef;
+}
+
+.inp-ggroup{
+    margin-bottom: 20px;
+}
+
+/* Tipos de fuente */
+@font-face {
+    font-family: themillion;
+    src: url("../Desarrollo Axel/Fonts/letras.ttf");
+}
+
+@font-face {
+    font-family: themillion1;
+    src: url("../Desarrollo Axel/Fonts/letras1.ttf");
+}
+
+h2{
+    font-family: themillion;
+
+}
+
+h1{
+    font-family: themillion1;
+
+}
