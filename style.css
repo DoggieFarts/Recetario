@@ -25,19 +25,17 @@
 
 @font-face {
   font-family: themillion;
-  src: url("../Desarrollo Axel/Fonts/letras.ttf");
+  src: url("Fonts/letras.ttf");
 }
 
 @font-face {
   font-family: themillion1;
-  src: url("../Desarrollo Axel/Fonts/letras1.ttf");
+  src: url("Fonts/letras1.ttf");
 }
 
-h2{
-  font-family: themillion;
-}
 
-h1{
+
+.titulosIndex{
   font-family: themillion1;
 }
 
