@@ -1,0 +1,345 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+/* Cargar image */
+
+.principal{
+    display: grid;
+    height: 100%;
+    place-items: center;
+    text-align: center;
+}
+
+.container-new{
+    height: 350px;
+    width: 430px;
+}
+
+.container-new .wrapper{
+    position: relative;
+    height: 300px;
+    width: 100%;
+    border-radius: 10px;
+    background: #ffffff;
+    border: 2px dashed #c2cdda;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.wrapper .active{
+    border: none;
+}
+
+.wrapper .image{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper .image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.wrapper .icon{
+    font-size: 100px;
+    color: #9658fe;
+}
+
+.wrapper .text{
+    font-size: 20px;
+    font-weight: 500;
+    color: #5B5B7B;
+}
+
+.wrapper #cancel-btn{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #9658fe;
+    display: none;
+}
+
+.wrapper.active:hover #cancel-btn{
+    display: block;
+}
+
+.wrapper #cancel-btn:hover{
+    color: #e74c3c;
+}
+
+.wrapper .file-name{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    color: #ffffff;
+    padding: 8px 0;
+    font-size: 18px;
+    /*display: none;*/
+    background: linear-gradient(135deg, #3a8ffe 0%, #9658fe 100%);
+}
+
+.wrapper.active:hover .file-name{
+    display: block;
+}
+
+.container-new #custom-btn{
+    margin-top: 25px;
+    width: 100%;
+    height: 50px;
+    display: block;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: linear-gradient(135deg, #3a8ffe 0%, #9658fe 100%);
+}
+
+/* ---- */
+
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: -o-flex; //pendiente
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to top right, #d94076 0%, #d359f8 100%);
+    background: white;
+}
+
+.centrado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 18px;
+}
+
+.container3{
+    max-width: 700px;
+    background: #ffffff;
+    border-radius: 5px;
+    width: 800px;
+    padding: 20px;
+    box-shadow: 0 2px  2px 30px rgba(0,0,0,0.1);
+}
+
+.container4{
+    max-width: 700px;
+    background: #ffffff;
+    border-radius: 5px;
+    width: 800px;
+    padding: 20px;
+    box-shadow: 0 2px  2px 30px rgba(0,0,0,0.1);
+}
+
+.wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e4e1e1;
+}
+
+.wrap2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e4e1e1;
+}
+
+.add{
+    text-decoration: none;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: #8bc34a;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add2{
+    text-decoration: none;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: #8bc34a;
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Creando clase dinamica */
+.flex{
+    display: flex;
+    gap: 1.5em;
+    margin-bottom: 15px;
+}
+
+.flex2{
+    display: flex;
+    gap: 1.5em;
+    margin-bottom: 15px;
+}
+
+.delete{
+    text-decoration: none;
+    display: inline-block;
+    background: red;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 45px;
+    height: 30px;
+    color: white;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.delete2{
+    text-decoration: none;
+    display: inline-block;
+    background: red;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 45px;
+    height: 30px;
+    color: white;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+input{
+    padding: 5px 10px;
+    background: #ddd;
+    border: none;
+    width: 50%;
+    border-radius: 5px;
+}
+
+.input-2{
+    padding: 5px 10px;
+    background: #ddd;
+    border: none;
+    width: 15%;
+    border-radius: 5px;
+}
+
+textarea{
+    padding: 5px 10px;
+    background: #ddd;
+    border: none;
+    width: 85%;
+    border-radius: 5px;
+}
+
+/*diseño del boton -> select */
+
+/*select{
+    padding: 5px 10px;
+    background: #ddd;
+    border: none;
+    width: 50%;
+    border-radius: 5px;
+}*/
+
+select{
+    -webkit-appearance:none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 5px 10px;
+    border: none;
+    width: 50%;
+    border: 6px solid #ff0067;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    background-size: 47px;
+    background: #ff0067 url("images/down-chevron.png") no-repeat 247px 0;
+    outline: none;
+    box-shadow: 0 0 18px rgba(20,20,30,0.25);
+}
+
+select::-ms-expand{
+    display: none;
+}
+
+select:hover{
+    border: 6px solid #ff66a3;
+}
+
+select opciones{
+    background-color: yellow;
+}
+
+input:focus{
+    outline: 1px solid #efefef;
+}
+
+.inp-ggroup{
+    margin-bottom: 20px;
+}
+
+.inp-ggroup2{
+    margin-bottom: 20px;
+}
+
+
+/* Tipos de fuente */
+@font-face {
+    font-family: themillion;
+    src: url("Fonts/letras.ttf");
+}
+
+@font-face {
+    font-family: themillion1;
+    src: url("Fonts/letras1.ttf");
+}
+
+h2{
+    font-family: themillion;
+
+}
+
+h1{
+    font-family: themillion1;
+
+}
+
+/* Img de boton visualizar */
+
+
