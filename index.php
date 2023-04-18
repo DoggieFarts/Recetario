@@ -14,15 +14,15 @@ session_start();
   <!--Titulo-->
   <title>Mi Recetario</title>
   <!--Favicon - icono de la pestaña-->
-  <link rel="icon" type="image/x-icon" href="../Desarrollo%20Axel/images/cocinero.png">
+  <link rel="icon" type="image/x-icon" href="images/cocinero.png">
   <!--Bootstrap-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <!--My CSS-->
   <link href="style.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="../Desarrollo%20Axel/js/Filter.css">
-  <link rel="stylesheet" href="../Desarrollo%20Axel/js/Bootstrap-Tags-Input-bootstrap-tagsinput.css">
+  <link rel="stylesheet" href="js/Filter.css">
+  <link rel="stylesheet" href="js/Bootstrap-Tags-Input-bootstrap-tagsinput.css">
 
 </head>
 
@@ -37,12 +37,12 @@ session_start();
 
       <div class="collapse navbar-collapse" id="navbar-toggler">
         <a class="navbar-brand" href="#">
-          <img src="../Desarrollo%20Axel/images/cocina.png" width="50" alt="Logo de la página web">
+          <img src="images/cocina.png" width="50" alt="Logo de la página web">
         </a>
 
         <form class="d-flex" role="search">
           <input class="form-control me-1" type="search" placeholder="Buscar" aria-label="Search" size="40">
-          <a href="#myModal" data-bs-toggle="modal"><img src="../Desarrollo%20Axel/images/buscar.png" width="30" alt="buscador">
+          <a href="#myModal" data-bs-toggle="modal"><img src="images/buscar.png" width="30" alt="buscador">
           </a>
           <!--<button class="btn btn-outline-success" type="submit">Buscar</button>-->
         </form>
@@ -53,7 +53,7 @@ session_start();
 
           <div class="dropdown">
             <button class="btn btn-light dropdown-toggle btn-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="../Desarrollo%20Axel/images/recetario.svg" width="27" alt="mi recetario">
+              <img src="images/recetario.svg" width="27" alt="mi recetario">
               Mi Recetario
             </button>
             <ul class="dropdown-menu me-2 dropdown-menu-info">
@@ -68,7 +68,7 @@ session_start();
           </div>
 
           <button type="button" class="btn btn-light btn-2">
-            <img src="../Desarrollo%20Axel/images/carrito-de-supermercado.png" width="27" alt="carrito de compras">
+            <img src="images/carrito-de-supermercado.png" width="27" alt="carrito de compras">
             Comprar
           </button>
           
@@ -76,7 +76,7 @@ session_start();
           <div class="dropdown">
             <button class="btn btn-light dropdown-toggle btn-3" type="button" data-bs-toggle="dropdown"
               aria-expanded="true">
-              <img src="../Desarrollo%20Axel/images/user.png" width="27" alt="carrito de compras">
+              <img src="images/user.png" width="27" alt="carrito de compras">
               <?php
               include "./php/session.php"
               ?>
@@ -178,9 +178,9 @@ session_start();
   <!--Otra parte -->
   <section>
     <div class="container">
-      <h1>Buenas (estado del dia) user</h1>
+      <h1 class="titulosIndex">Buenas (estado del dia) user</h1>
       <center>
-      <h2>
+      <h2 class="titulosIndex">
         < Comidas para ti >
       </h2>
       </center>
@@ -189,7 +189,7 @@ session_start();
         <!--Empiezan las cards -->
         <div class="col">
           <div class="card">
-            <img src="../Desarrollo%20Axel/images/desayuno.jpg" class="card-img-top" alt="...">
+            <img src="images/desayuno.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Desayuno</h5>
               <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -198,7 +198,7 @@ session_start();
         </div>
         <div class="col">
           <div class="card">
-            <img src="../Desarrollo%20Axel/images/comida.jpg" class="card-img-top" alt="...">
+            <img src="images/comida.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Comida</h5>
               <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -207,7 +207,7 @@ session_start();
         </div>
         <div class="col">
           <div class="card">
-            <img src="../Desarrollo%20Axel/images/cena1.jpg" class="card-img-top" alt="...">
+            <img src="images/cena1.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Cena</h5>
               <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
@@ -216,7 +216,7 @@ session_start();
         </div>
         <div class="col">
           <div class="card">
-            <img src="../Desarrollo%20Axel/images/postre.jpg" class="card-img-top" alt="...">
+            <img src="images/postre.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h5 class="card-title">Postres</h5>
               <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -233,7 +233,7 @@ session_start();
   </script>
 </body>
 
-
+<!--Modal de busqueda-->
 <div class="modal fade" role="dialog" tabindex="-1" id="myModal">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -242,7 +242,7 @@ session_start();
       </div>
       <div class="modal-body">
         <div class="filter">
-          <form method="POST" action="#">
+          <form method="POST" action="resultadoBusqueda.php">
             <label for="platillo">Platillo específico</label><br>
             <input id="platillo" placeholder="Platillo específico"></input>
             <br>
@@ -263,7 +263,9 @@ session_start();
     <br>
             <div>
               <button class="btn btn-primary" type="buttom" data-bs-dismiss="modal">Cerrar</button>
+                <a href="resultadoBusqueda.php">
               <button class="btn btn-primary" type="submit">Buscar</button>
+                </a>
             </div>
 
 
@@ -283,7 +285,7 @@ session_start();
     <div class="row">
       <!-- LOGO -->
       <a href="#" class="col-3 text-reser text-uppercase d-flex align-items-center">
-        <img src="../Desarrollo%20Axel/images/cocina.png" width="75" alt="Logo de la página web" class="img-logo mr-2">
+        <img src="images/cocina.png" width="75" alt="Logo de la página web" class="img-logo mr-2">
         Recetario
       </a>
       <!-- MENÚ -->
@@ -315,6 +317,6 @@ session_start();
 </footer>
 
 
-<script src="../Desarrollo%20Axel/js/Bootstrap-Tags-Input-bootstrap-tagsinput-custom.js"></script>
-<script src="../Desarrollo%20Axel/js/Bootstrap-Tags-Input-bootstrap-tagsinput.min.js"></script>
+<script src="js/Bootstrap-Tags-Input-bootstrap-tagsinput-custom.js"></script>
+<script src="js/Bootstrap-Tags-Input-bootstrap-tagsinput.min.js"></script>
 </html>

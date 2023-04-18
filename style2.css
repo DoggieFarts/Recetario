@@ -11,7 +11,7 @@ body{
     display: -o-flex; 
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to top right,  #fa689e 0%, #b86ccf 100%);
+
 }
 
 .centrado{
@@ -98,20 +98,11 @@ input:focus{
 /* Tipos de fuente */
 @font-face {
     font-family: themillion;
-    src: url("../Desarrollo Axel/Fonts/letras.ttf");
+    src: url("Fonts/letras.ttf");
 }
 
 @font-face {
     font-family: themillion1;
-    src: url("../Desarrollo Axel/Fonts/letras1.ttf");
+    src: url("Fonts/letras1.ttf");
 }
 
-h2{
-    font-family: themillion;
-
-}
-
-h1{
-    font-family: themillion1;
-
-}
