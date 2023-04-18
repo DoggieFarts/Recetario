@@ -97,7 +97,7 @@ session_start();
 </nav>
 <div class="container">
 <div class="list-group">
-    <a href="#" class="list-group-item list-group-item-action"> <img src="images/desayuno.jpg" alt="..." class="img-thumbnail float-left" style="width: 15vw; alignment: left ">Dapibus ac facilisis in </a>
+    <a href="#" class="list-group-item list-group-item-action"> <img src="images/desayuno.jpg" alt="..." class="img-thumbnail float-left" style="width: 15vw; alignment: left ">WEBOS XDD <br>Categoría:<br>Region:<br>Tipo de alimentacion:</a>
     <a href="#" class="list-group-item list-group-item-action list-group-item-primary"> <img src="images/desayuno.jpg" alt="..." class="img-thumbnail float-left" style="width: 15vw; alignment: left ">A simple primary list group item</a>
     <a href="#" class="list-group-item list-group-item-action list-group-item-secondary"> <img src="images/desayuno.jpg" alt="..." class="img-thumbnail float-left" style="width: 15vw; alignment: left ">A simple secondary list group item</a>
     <a href="#" class="list-group-item list-group-item-action list-group-item-success"> <img src="images/desayuno.jpg" alt="..." class="img-thumbnail float-left" style="width: 15vw; alignment: left ">A simple success list group item</a>
