@@ -1,6 +1,5 @@
 <?php
 session_start();
-//Axel Cambio
 ?>
 <!DOCTYPE html>
 <html lang="es">
