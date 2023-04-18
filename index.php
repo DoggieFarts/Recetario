@@ -233,7 +233,7 @@ session_start();
   </script>
 </body>
 
-
+<!--Modal de busqueda-->
 <div class="modal fade" role="dialog" tabindex="-1" id="myModal">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -242,7 +242,7 @@ session_start();
       </div>
       <div class="modal-body">
         <div class="filter">
-          <form method="POST" action="#">
+          <form method="POST" action="resultadoBusqueda.php">
             <label for="platillo">Platillo específico</label><br>
             <input id="platillo" placeholder="Platillo específico"></input>
             <br>
@@ -263,7 +263,9 @@ session_start();
     <br>
             <div>
               <button class="btn btn-primary" type="buttom" data-bs-dismiss="modal">Cerrar</button>
+                <a href="resultadoBusqueda.php">
               <button class="btn btn-primary" type="submit">Buscar</button>
+                </a>
             </div>
 
 

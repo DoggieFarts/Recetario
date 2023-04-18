@@ -220,6 +220,7 @@ session_start();
 </body>
 
 <!--footer-->
+<div class=" fixed-bottom">
 <footer class="bg-dark text-white py-4">
   <div class="container">
     <div class="row">
@@ -255,6 +256,51 @@ session_start();
     </div>
   </div>
 </footer>
+</div>
+
+<!--Modal de busqueda-->
+<div class="modal fade" role="dialog" tabindex="-1" id="myModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Filtros de búsqueda</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="filter">
+                    <form method="POST" action="#">
+                        <label for="platillo">Platillo específico</label><br>
+                        <input id="platillo" placeholder="Platillo específico"></input>
+                        <br>
+                        <select>
+                            <option value="" selected disabled>Tipo de comida</option>
+                            <option value="vegana" >Vegana</option>
+                            <option value="vegetariana" >Vegetariana</option>
+                            <option value="carnivora" >Carnívora</option>
+                            <option value="sinfiltro">Sin preferencia</option>
+                        </select>
+                        <br>
+                        <label for="ingredientes">Ingredientes</label>
+
+                        <input type="text" id="ingredientes" data-role="tagsinput" data-class="label-info" placeholder="Ingredientes" />
+
+                        <label for="ingredientesN">Ingredientes no deseados</label>
+                        <input type="text" id="ingredientesN" data-role="tagsinput" data-class="label-info" placeholder="Ingredientes no deseados" />
+                        <br>
+                        <div>
+                            <button class="btn btn-primary" type="buttom" data-bs-dismiss="modal">Cerrar</button>
+                            <button class="btn btn-primary" type="submit">Buscar</button>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <p>Ultimate&nbsp;<span style="color: rgb(32, 33, 36);">® GRACIAS A DIOS Q ES VIERNES</span></p>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="js/Bootstrap-Tags-Input-bootstrap-tagsinput-custom.js"></script>
 <script src="js/Bootstrap-Tags-Input-bootstrap-tagsinput.min.js"></script>
