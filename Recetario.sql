@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `Recetario`.`favoritos` (
   `fagregada` DATETIME NOT NULL,
   PRIMARY KEY (`usuarios_idusuarios`, `recetas_idrecetas`),
   INDEX `fk_usuarios_has_recetas_recetas1_idx` (`recetas_idrecetas` ASC),
-  INDEX `fk_usuarios_has_recetas_usuarios_idx` (`usuarios_idusuarios` ASC) VISIBLE,
+  INDEX `fk_usuarios_has_recetas_usuarios_idx` (`usuarios_idusuarios` ASC),
   CONSTRAINT `fk_usuarios_has_recetas_usuarios`
     FOREIGN KEY (`usuarios_idusuarios`)
     REFERENCES `Recetario`.`usuarios` (`idusuarios`)
