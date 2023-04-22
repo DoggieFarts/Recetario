@@ -1,15 +1,13 @@
 
 // Subir Imagen
 const wrapper = document.querySelector(".wrapper");
-const fileName = document.querySelector(".file-name");
 
 //Formulario
 const cancelBtn = document.querySelector("#cancel-btn");
 const defaultBtn = document.querySelector("#default-btn");
 const customBtn = document.querySelector("#custom-btn");
-const img = document.querySelector("img");
 
-let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_\ ]+$/;
+//let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_\ ]+$/;
 
 function defaultBtnActive(){
     defaultBtn.click();
@@ -28,20 +26,21 @@ function previewImage(event, querySelector){
 
     //Recuperamos el archivo subido
     file = input.files[0];
+    console.log(file);
 
     //Creamos la url
     objectURL = URL.createObjectURL(file);
-
+    console.log(objectURL);
     //Modificamos el atributo src de la etiqueta img
 
 
-    const reader = new FileReader();
-    reader.onload = function (){
+    //const reader = new FileReader();
+    //reader.onload = function (){
         $imgPreview.src = objectURL;
         wrapper.classList.add("active");
 
-    }
-    reader.readAsDataURL(file);
+    //}
+    //reader.readAsDataURL(file);
 
 
     cancelBtn.addEventListener("click", function (){
@@ -50,10 +49,10 @@ function previewImage(event, querySelector){
     });
 
 
-    if(this.value){
-        let valueStore = this.value.match(regExp);
-        fileName.textContent = valueStore;
-    }
+    //if(this.value){
+      //  let valueStore = this.value.match(regExp);
+        //fileName.textContent = valueStore;
+    //}
 
 }
 

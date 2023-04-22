@@ -14,16 +14,23 @@ if($res->num_rows>0){
 }
 //echo"despues del primer if";
 if(isset($_POST['nombre'])){
+
+    $tmp_name = $_FILES["imagens"]["tmp_name"];
+    $nombrei= $_FILES['imagens']['name'];
+    $destino="./imgRecetas/".$nombrei;
+    if(move_uploaded_file($tmp_name, $destino)){
+        echo"se subio";
+    }
+
     $creador=$_SESSION['ID'];
     $nombre=$_POST['nombre'];
     $categoria=$_POST['categoria'];
     $region=$_POST['region'];
     $porciones=$_POST['porciones'];
     $talimentacion=$_POST['talimentacion'];
-    $preparacion=$_POST['preparacion'];
 
-    $sql="INSERT INTO `recetas` (`idrecetas`, `nombre`, `preparacion`, `tipoAlimentacion`, `porciones`, `Categoria`, `Region`, `creador`)
-    VALUES($Idres, '$nombre', '$preparacion', '$talimentacion', $porciones, '$categoria', '$region', '$creador')";
+    $sql="INSERT INTO `recetas` (`idrecetas`, `nombre`,`tipoAlimentacion`, `porciones`, `Categoria`, `Region`, `creador`,`imagen`)
+    VALUES($Idres, '$nombre','$talimentacion', $porciones, '$categoria', '$region', '$creador','$destino')";
     //echo $sql;
     if($con->query($sql)==true){
         $ning=$_POST['ning'];
