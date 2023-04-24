@@ -96,20 +96,28 @@ function addInput(event){
     opciones.text="L"
     medida.add(opciones);
     var opciones = document.createElement("option");
+    opciones.value="ml"
+    opciones.text="ml"
+    medida.add(opciones);
+    var opciones = document.createElement("option");
     opciones.value="Kg"
     opciones.text="Kg"
     medida.add(opciones);
     var opciones = document.createElement("option");
-    opciones.value="ml"
-    opciones.text="ml"
+    opciones.value="g"
+    opciones.text="g"
+    medida.add(opciones);
+    var opciones = document.createElement("option");
+    opciones.value="mg"
+    opciones.text="mg"
     medida.add(opciones);
     var opciones = document.createElement("option");
     opciones.value="tz"
     opciones.text="tz"
     medida.add(opciones);
     var opciones = document.createElement("option");
-    opciones.value="cd"
-    opciones.text="cd"
+    opciones.value="pz"
+    opciones.text="pz"
     medida.add(opciones);
 
     var placeholderOption = document.createElement("option");
@@ -175,12 +183,13 @@ function addInput2(event) {
     titulo.type="text";
     titulo.disabled=true;
     titulo.placeholder = "Paso: "+j;
-    titulo.name="ingrediente"+j;
+    titulo.value="Paso: "+j;
+    titulo.name="pason"+j;
 
     const name2 = document.createElement("textarea");
     name2.type = "text";
     name2.placeholder = "Digite su paso de la receta";
-    name2.name2 = "paso" + j;
+    name2.name = "paso" + j;
 
     const btn2 = document.createElement("n");
     btn2.className = "delete";
@@ -197,12 +206,12 @@ function addInput2(event) {
 
         invi2.type="hidden";
         invi2.name="ning1";
-        invi2.value=i;
+        invi2.value=j;
     }else{
         document.removeChild(ning);
         invi2.type="hidden";
         invi2.name="ning1";
-        invi2.value=i;
+        invi2.value=j;
     }
 
     input2.appendChild(flex2);

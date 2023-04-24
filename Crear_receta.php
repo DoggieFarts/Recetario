@@ -147,7 +147,7 @@ session_start();
   <!--Otra parte -->
   <form method="post" enctype="multipart/form-data">
     <section>
-      <input id="default-btn" type="file" name="imagens" onchange="previewImage(event, '#imgPreview')">
+      <input id="default-btn" hidden type="file" name="imagens" onchange="previewImage(event, '#imgPreview')">
       <div class="container">
 
         <div class="mb-3">
@@ -242,7 +242,7 @@ session_start();
       </div>
     </section>
     <?php
-
+    include "php/cargarReceta.php";
     ?>
   </form>
 
