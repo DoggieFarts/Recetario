@@ -191,10 +191,25 @@ function addInput2(event) {
     const flex2=document.createElement("div");
     flex2.className="flex2";
 
+    const invi2 = document.createElement("input");;
+
+    if(!!document.getElementsByName("ning1")){
+
+        invi2.type="hidden";
+        invi2.name="ning1";
+        invi2.value=i;
+    }else{
+        document.removeChild(ning);
+        invi2.type="hidden";
+        invi2.name="ning1";
+        invi2.value=i;
+    }
+
     input2.appendChild(flex2);
     flex2.appendChild(titulo);
     flex2.appendChild(name2);
     flex2.appendChild(btn2);
+    flex2.appendChild(invi2);
 
 }
 

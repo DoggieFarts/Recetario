@@ -34,7 +34,8 @@ if(isset($_POST['nombre'])){
     //echo $sql;
     if($con->query($sql)==true){
         $ning=$_POST['ning'];
-        echo $ning;
+        $ning1=$_POST['ning1'];
+        //echo $ning;
         for($x=1;$x<=$ning;$x++){
             echo "for";
             $ingrediente=$_POST['ingrediente'.$x];
