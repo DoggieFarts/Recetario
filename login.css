@@ -20,9 +20,7 @@ section{
 .form-box{
     position: relative;
     width: 400px;
-    height: auto;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    height: 450px;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, 0.5);
     display: flex;
@@ -126,8 +124,4 @@ button{
 
 .register p a:hover{
     text-decoration: underline;
-}
-
-.errorl{
-    color: rgb(136, 1, 1);
 }
