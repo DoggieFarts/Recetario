@@ -3,6 +3,7 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <!--Metadatos-->
     <meta charset="UTF-8">
@@ -15,8 +16,7 @@ session_start();
     <!--Favicon - icono de la pestaña-->
     <link rel="icon" type="image/x-icon" href="images/cocinero.png">
     <!--Bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <!-- CDN Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 
@@ -29,86 +29,91 @@ session_start();
     <link rel="stylesheet" href="js/Bootstrap-Tags-Input-bootstrap-tagsinput.css">
 
 </head>
+
 <body>
-<!--Barra de Navegación-->
-<nav class="navbar navbar-expand-md navbar-light sticky-top">
-    <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler"
-                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <!--Barra de Navegación-->
+    <nav class="navbar navbar-expand-md navbar-light sticky-top">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbar-toggler">
-            <a class="navbar-brand" href="#">
-                <img src="images/cocina.png" width="50" alt="Logo de la página web">
-            </a>
-
-            <form class="d-flex" role="search">
-                <input class="form-control me-1" type="search" placeholder="Buscar" aria-label="Search" size="40">
-                <a href="#myModal" data-bs-toggle="modal"><img src="images/buscar.png" width="30" alt="buscador">
+            <div class="collapse navbar-collapse" id="navbar-toggler">
+                <a class="navbar-brand" href="#">
+                    <img src="images/cocina.png" width="50" alt="Logo de la página web">
                 </a>
-                <!--<button class="btn btn-outline-success" type="submit">Buscar</button>-->
-            </form>
+
+                <form class="d-flex" role="search">
+                    <input class="form-control me-1" type="search" placeholder="Buscar" aria-label="Search" size="40">
+                    <a href="#myModal" data-bs-toggle="modal"><img src="images/buscar.png" width="30" alt="buscador">
+                    </a>
+                    <!--<button class="btn btn-outline-success" type="submit">Buscar</button>-->
+                </form>
 
 
 
-            <ul class="navbar-nav d-flex justify-content-center align-items-center">
+                <ul class="navbar-nav d-flex justify-content-center align-items-center">
 
-                <div class="dropdown">
-                    <button class="btn btn-light dropdown-toggle btn-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="images/recetario.svg" width="27" alt="mi recetario">
-                        Mi Recetario
+                    <div class="dropdown">
+                        <button class="btn btn-light dropdown-toggle btn-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="images/recetario.svg" width="27" alt="mi recetario">
+                            Mi Recetario
+                        </button>
+                        <ul class="dropdown-menu me-2 dropdown-menu-info">
+                            <li><a class="dropdown-item active" href="#">Mis Recetas</a></li>
+                            <li><a class="dropdown-item" href="Crear_receta.php">Crear Receta</a></li>
+                            <li><a class="dropdown-item" href="#">Something</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item " href="#">Invitar</a></li>
+                        </ul>
+                    </div>
+
+                    <button type="button" class="btn btn-light btn-2">
+                        <img src="images/carrito-de-supermercado.png" width="27" alt="carrito de compras">
+                        Comprar
                     </button>
-                    <ul class="dropdown-menu me-2 dropdown-menu-info">
-                        <li><a class="dropdown-item active" href="#">Mis Recetas</a></li>
-                        <li><a class="dropdown-item" href="Crear_receta.php">Crear Receta</a></li>
-                        <li><a class="dropdown-item" href="#">Something</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item " href="#">Invitar</a></li>
-                    </ul>
-                </div>
-
-                <button type="button" class="btn btn-light btn-2">
-                    <img src="images/carrito-de-supermercado.png" width="27" alt="carrito de compras">
-                    Comprar
-                </button>
 
 
-                <div class="dropdown">
-                    <button class="btn btn-light dropdown-toggle btn-3" type="button" data-bs-toggle="dropdown"
-                            aria-expanded="true">
-                        <img src="images/user.png" width="27" alt="carrito de compras">
-                        <?php
-                        include "./php/session.php"
-                        ?>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-info">
-                        <li><a class="dropdown-item" href="#">Configuración</a></li>
-                        <li><a class="dropdown-item" href="#">Preferencias </a></li>
-                        <li><a class="dropdown-item" href="login.php">Cerrar sesión</a></li>
-                    </ul>
-                </div>
+                    <div class="dropdown">
+                        <button class="btn btn-light dropdown-toggle btn-3" type="button" data-bs-toggle="dropdown" aria-expanded="true">
+                            <img src="images/user.png" width="27" alt="carrito de compras">
+                            <?php
+                            include "./php/session.php"
+                            ?>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-info">
+                            <li><a class="dropdown-item" href="#">Configuración</a></li>
+                            <li><a class="dropdown-item" href="#">Preferencias </a></li>
+                            <li><a class="dropdown-item" href="login.php">Cerrar sesión</a></li>
+                        </ul>
+                    </div>
 
-            </ul>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action">
+                <img src="images/desayuno.jpg" alt="..." class="img-thumbnail float-left" style="width: 15vw; alignment: left ">
+                WEBOS XDD 
+                <br>Categoría:
+                <br>Region:
+                <br>Tipo de alimentacion:
+            </a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-primary"> <img src="images/desayuno.jpg" alt="..." class="img-thumbnail float-left" style="width: 15vw; alignment: left ">A simple primary list group item</a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-secondary"> <img src="images/desayuno.jpg" alt="..." class="img-thumbnail float-left" style="width: 15vw; alignment: left ">A simple secondary list group item</a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-success"> <img src="images/desayuno.jpg" alt="..." class="img-thumbnail float-left" style="width: 15vw; alignment: left ">A simple success list group item</a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-danger"> <img src="images/desayuno.jpg" alt="..." class="img-thumbnail float-left" style="width: 15vw; alignment: left ">A simple danger list group item</a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-warning"> <img src="images/desayuno.jpg" alt="..." class="img-thumbnail float-left" style="width: 15vw; alignment: left ">A simple warning list group item</a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-info"> <img src="images/desayuno.jpg" alt="..." class="img-thumbnail float-left" style="width: 15vw; alignment: left ">A simple info list group item</a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-light"> <img src="images/desayuno.jpg" alt="..." class="img-thumbnail float-left" style="width: 15vw; alignment: left ">A simple light list group item</a>
+            <a href="#" class="list-group-item list-group-item-action list-group-item-dark"> <img src="images/desayuno.jpg" alt="..." class="img-thumbnail float-left" style="width: 15vw; alignment: left ">A simple dark list group item</a>
+            <!-- Esta lista puede irse agregando automaticamente con un ciclo en php (por lo que solo ocuparias una linea de codigo html xdxd)---->
         </div>
     </div>
-</nav>
-<div class="container">
-<div class="list-group">
-    <a href="#" class="list-group-item list-group-item-action"> <img src="images/desayuno.jpg" alt="..." class="img-thumbnail float-left" style="width: 15vw; alignment: left ">WEBOS XDD <br>Categoría:<br>Region:<br>Tipo de alimentacion:</a>
-    <a href="#" class="list-group-item list-group-item-action list-group-item-primary"> <img src="images/desayuno.jpg" alt="..." class="img-thumbnail float-left" style="width: 15vw; alignment: left ">A simple primary list group item</a>
-    <a href="#" class="list-group-item list-group-item-action list-group-item-secondary"> <img src="images/desayuno.jpg" alt="..." class="img-thumbnail float-left" style="width: 15vw; alignment: left ">A simple secondary list group item</a>
-    <a href="#" class="list-group-item list-group-item-action list-group-item-success"> <img src="images/desayuno.jpg" alt="..." class="img-thumbnail float-left" style="width: 15vw; alignment: left ">A simple success list group item</a>
-    <a href="#" class="list-group-item list-group-item-action list-group-item-danger"> <img src="images/desayuno.jpg" alt="..." class="img-thumbnail float-left" style="width: 15vw; alignment: left ">A simple danger list group item</a>
-    <a href="#" class="list-group-item list-group-item-action list-group-item-warning"> <img src="images/desayuno.jpg" alt="..." class="img-thumbnail float-left" style="width: 15vw; alignment: left ">A simple warning list group item</a>
-    <a href="#" class="list-group-item list-group-item-action list-group-item-info"> <img src="images/desayuno.jpg" alt="..." class="img-thumbnail float-left" style="width: 15vw; alignment: left ">A simple info list group item</a>
-    <a href="#" class="list-group-item list-group-item-action list-group-item-light"> <img src="images/desayuno.jpg" alt="..." class="img-thumbnail float-left" style="width: 15vw; alignment: left ">A simple light list group item</a>
-    <a href="#" class="list-group-item list-group-item-action list-group-item-dark"> <img src="images/desayuno.jpg" alt="..." class="img-thumbnail float-left" style="width: 15vw; alignment: left ">A simple dark list group item</a>
-    <!-- Esta lista puede irse agregando automaticamente con un ciclo en php (por lo que solo ocuparias una linea de codigo html xdxd)---->
-</div>
-</div>
 
 
 </body>
@@ -128,9 +133,9 @@ session_start();
                         <br>
                         <select>
                             <option value="" selected disabled>Tipo de comida</option>
-                            <option value="vegana" >Vegana</option>
-                            <option value="vegetariana" >Vegetariana</option>
-                            <option value="carnivora" >Carnívora</option>
+                            <option value="vegana">Vegana</option>
+                            <option value="vegetariana">Vegetariana</option>
+                            <option value="carnivora">Carnívora</option>
                             <option value="sinfiltro">Sin preferencia</option>
                         </select>
                         <br>
@@ -159,9 +164,7 @@ session_start();
     </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
 </script>
 
 <!--footer-->
@@ -204,4 +207,5 @@ session_start();
 </div>
 <script src="js/Bootstrap-Tags-Input-bootstrap-tagsinput-custom.js"></script>
 <script src="js/Bootstrap-Tags-Input-bootstrap-tagsinput.min.js"></script>
+
 </html>

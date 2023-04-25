@@ -57,7 +57,7 @@ session_start();
               Mi Recetario
             </button>
             <ul class="dropdown-menu me-2 dropdown-menu-info">
-              <li><a class="dropdown-item active" href="#">Mis Recetas</a></li>
+              <li><a class="dropdown-item active" href="MisRecetas.php">Mis Recetas</a></li>
               <li><a class="dropdown-item" href="Crear_receta.php">Crear Receta</a></li>
               <li><a class="dropdown-item" href="#">Something</a></li>
               <li>
