@@ -182,7 +182,7 @@ session_start();
         <div class="row g-3">
           <div class="col">
             <label for="input_time" class="form-label">Region</label>
-            <input type="text" name="region" class="form-control" placeholder="Pais" aria-label="First name" id="input_time">
+            <input type="text" name="region" class="form-control" placeholder="Region" aria-label="First name" id="input_time">
           </div>
           <div class="col">
             <label for="input_porciones" class="form-label">Rendimiento</label>

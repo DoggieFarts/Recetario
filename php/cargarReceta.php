@@ -20,6 +20,8 @@ if (isset($_POST['nombre'])) {
     $destino = "./imgRecetas/" . $nombrei;
     if (move_uploaded_file($tmp_name, $destino)) {
         echo "se subio";
+    }else{
+        echo$_FILES['image']['error'];
     }
 
     $creador = $_SESSION['ID'];
@@ -42,7 +44,7 @@ if (isset($_POST['nombre'])) {
             $cantidad = $_POST['cantidad' . $x];
             $medida = $_POST['medida'.$x];
             $sqling = "SELECT * FROM ingredientes WHERE ingrediente = '$ingrediente'";
-            echo $sqling;
+            //echo $sqling;
             $res = $con->query($sqling);
             if ($res->num_rows > 0) {
                 $sqlingrec = "INSERT INTO recetasIngredientes (recetas_idrecetas,ingredientes_ingrediente,cantidad,unidad)
@@ -73,7 +75,7 @@ if (isset($_POST['nombre'])) {
             $pason = $x;
             $sqlpa = "INSERT INTO Pasos (numPasos,paso,recetas_idrecetas,recetas_creador)
                     VALUES ('$pason','$paso','$Idres','$creador')";
-            echo $sqlpa;
+            //echo $sqlpa;
             if ($con->query($sqlpa) == true) {
                 if($x== $ning1)
                 header("Location:./index.php");
