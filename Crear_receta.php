@@ -39,7 +39,7 @@ session_start();
       </button>
 
       <div class="collapse navbar-collapse" id="navbar-toggler">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.php">
           <img src="images/cocina.png" width="50" alt="Logo de la página web">
         </a>
 
@@ -58,7 +58,7 @@ session_start();
               Mi Recetario
             </button>
             <ul class="dropdown-menu me-2 dropdown-menu-info">
-              <li><a class="dropdown-item active" href="#">Mis Recetas</a></li>
+              <li><a class="dropdown-item active" href="MisRecetas.php">Mis Recetas</a></li>
               <li><a class="dropdown-item" href="Crear_receta.php">Crear Receta</a></li>
               <li><a class="dropdown-item" href="#">Something</a></li>
               <li>

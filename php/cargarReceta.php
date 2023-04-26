@@ -13,18 +13,20 @@ if ($res->num_rows > 0) {
     $Idres = 1;
 }
 //echo"despues del primer if";
+$creador = $_SESSION['ID'];
 if (isset($_POST['nombre'])) {
 
     $tmp_name = $_FILES["imagens"]["tmp_name"];
     $nombrei = $_FILES['imagens']['name'];
-    $destino = "./imgRecetas/" . $nombrei;
+    $destino = "./imgRecetas/" . $nombrei.$Idres.$creador;
+    //if (! is_dir('imgRecetas') ) mkdir ( 'imgRecetas' , 0755);
     if (move_uploaded_file($tmp_name, $destino)) {
         echo "se subio";
     }else{
         echo$_FILES['image']['error'];
     }
 
-    $creador = $_SESSION['ID'];
+    
     $nombre = $_POST['nombre'];
     $categoria = $_POST['categoria'];
     $region = $_POST['region'];
@@ -70,7 +72,7 @@ if (isset($_POST['nombre'])) {
             }
         }
         for ($x = 1; $x <= $ning1; $x++) {
-            echo "for";
+            //echo "for";
             $paso = $_POST['paso'.$x];
             $pason = $x;
             $sqlpa = "INSERT INTO Pasos (numPasos,paso,recetas_idrecetas,recetas_creador)

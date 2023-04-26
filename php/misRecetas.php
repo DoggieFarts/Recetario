@@ -2,7 +2,7 @@
 require "./php/conexion.php";
 //echo"sin id";
 $creador = $_SESSION['ID'];
-$sql1 = "SELECT * FROM `recetas` WHERE '$creador'";
+$sql1 = "SELECT * FROM `recetas` WHERE creador='$creador'";
 $res = $con->query($sql1);
 //echo"antes del primer if";
 if ($res->num_rows > 0) {
