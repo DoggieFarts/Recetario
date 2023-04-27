@@ -17,7 +17,7 @@ if ($res->num_rows > 0) {
                 <p class="card-text">'.$row["Categoria"].'</p>
                 <p class="card-text">'.$row["Region"].'</p>
                 <div class="d-grid gap-1 col-5 mx-auto">
-                <a href="VerReceta.php?id='.$row["idrecetas"].'">
+                <a href="VerReceta.php?id='.$row["idrecetas"].'&idu='.$creador.'">
                     <button type="button" class="btn btn-primary" style="--bs-btn-padding-y: .50rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .9rem;">
                         <img src="images/vision.png" class="image_see" width="27" alt="ojo de visualizar">
                         Vizualizar Receta

@@ -96,21 +96,9 @@ session_start();
     </nav>
     <div class="container">
         <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action">
-                <img src="images/desayuno.jpg" alt="..." class="img-thumbnail float-left" style="width: 15vw; alignment: left ">
-                WEBOS XDD 
-                <br>Categoría:
-                <br>Region:
-                <br>Tipo de alimentacion:
-            </a>
-            <a href="#" class="list-group-item list-group-item-action list-group-item-primary"> <img src="images/desayuno.jpg" alt="..." class="img-thumbnail float-left" style="width: 15vw; alignment: left ">A simple primary list group item</a>
-            <a href="#" class="list-group-item list-group-item-action list-group-item-secondary"> <img src="images/desayuno.jpg" alt="..." class="img-thumbnail float-left" style="width: 15vw; alignment: left ">A simple secondary list group item</a>
-            <a href="#" class="list-group-item list-group-item-action list-group-item-success"> <img src="images/desayuno.jpg" alt="..." class="img-thumbnail float-left" style="width: 15vw; alignment: left ">A simple success list group item</a>
-            <a href="#" class="list-group-item list-group-item-action list-group-item-danger"> <img src="images/desayuno.jpg" alt="..." class="img-thumbnail float-left" style="width: 15vw; alignment: left ">A simple danger list group item</a>
-            <a href="#" class="list-group-item list-group-item-action list-group-item-warning"> <img src="images/desayuno.jpg" alt="..." class="img-thumbnail float-left" style="width: 15vw; alignment: left ">A simple warning list group item</a>
-            <a href="#" class="list-group-item list-group-item-action list-group-item-info"> <img src="images/desayuno.jpg" alt="..." class="img-thumbnail float-left" style="width: 15vw; alignment: left ">A simple info list group item</a>
-            <a href="#" class="list-group-item list-group-item-action list-group-item-light"> <img src="images/desayuno.jpg" alt="..." class="img-thumbnail float-left" style="width: 15vw; alignment: left ">A simple light list group item</a>
-            <a href="#" class="list-group-item list-group-item-action list-group-item-dark"> <img src="images/desayuno.jpg" alt="..." class="img-thumbnail float-left" style="width: 15vw; alignment: left ">A simple dark list group item</a>
+            <?php
+            include "./php/resbusqueda.php"
+            ?>
             <!-- Esta lista puede irse agregando automaticamente con un ciclo en php (por lo que solo ocuparias una linea de codigo html xdxd)---->
         </div>
     </div>

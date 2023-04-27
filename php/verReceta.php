@@ -1,7 +1,7 @@
 <?php
 require "./php/conexion.php";
 //echo"sin id";
-$creador = $_SESSION['ID'];
+$creador = $_GET['idu'];
 $ires=$_GET['id'];
 $sql = "SELECT * FROM `recetas` WHERE creador='$creador' and idrecetas='$ires'";
 $res = $con->query($sql);
