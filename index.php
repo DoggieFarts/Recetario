@@ -40,8 +40,8 @@ session_start();
           <img src="images/cocina.png" width="50" alt="Logo de la página web">
         </a>
 
-        <form class="d-flex" role="search">
-          <input class="form-control me-1" type="search" placeholder="Buscar" aria-label="Search" size="40">
+        <form class="d-flex" role="search" method="POST" action="resultadoBusqueda.php">
+          <input name="barrbus"class="form-control me-1" type="text" placeholder="Buscar" aria-label="Search" size="40">
           <a href="#myModal" data-bs-toggle="modal"><img src="images/buscar.png" width="30" alt="buscador">
           </a>
           <!--<button class="btn btn-outline-success" type="submit">Buscar</button>-->
@@ -57,7 +57,7 @@ session_start();
               Mi Recetario
             </button>
             <ul class="dropdown-menu me-2 dropdown-menu-info">
-              <li><a class="dropdown-item active" href="#">Mis Recetas</a></li>
+              <li><a class="dropdown-item active" href="MisRecetas.php">Mis Recetas</a></li>
               <li><a class="dropdown-item" href="Crear_receta.php">Crear Receta</a></li>
               <li><a class="dropdown-item" href="#">Something</a></li>
               <li>
@@ -260,12 +260,10 @@ session_start();
 
             <label for="ingredientesN">Ingredientes no deseados</label>
             <input type="text" id="ingredientesN" data-role="tagsinput" data-class="label-info" placeholder="Ingredientes no deseados" />
-    <br>
+            <br>
             <div>
               <button class="btn btn-primary" type="buttom" data-bs-dismiss="modal">Cerrar</button>
-                <a href="resultadoBusqueda.php">
               <button class="btn btn-primary" type="submit">Buscar</button>
-                </a>
             </div>
 
 

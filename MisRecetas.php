@@ -12,7 +12,7 @@ session_start();
     <meta name="keywords" content="HTML, CSS, JavaScript, ">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--Titulo-->
-    <title>Mi Recetario</title>
+    <title>Visualizar Receta</title>
     <!--Favicon - icono de la pestaña-->
     <link rel="icon" type="image/x-icon" href="images/cocinero.png">
     <!--Bootstrap-->
@@ -39,7 +39,7 @@ session_start();
             </button>
 
             <div class="collapse navbar-collapse" id="navbar-toggler">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="index.php">
                     <img src="images/cocina.png" width="50" alt="Logo de la página web">
                 </a>
 
@@ -50,8 +50,6 @@ session_start();
                     <!--<button class="btn btn-outline-success" type="submit">Buscar</button>-->
                 </form>
 
-
-
                 <ul class="navbar-nav d-flex justify-content-center align-items-center">
 
                     <div class="dropdown">
@@ -60,7 +58,7 @@ session_start();
                             Mi Recetario
                         </button>
                         <ul class="dropdown-menu me-2 dropdown-menu-info">
-                            <li><a class="dropdown-item active" href="#">Mis Recetas</a></li>
+                            <li><a class="dropdown-item active" href="MisRecetas.php">Mis Recetas</a></li>
                             <li><a class="dropdown-item" href="Crear_receta.php">Crear Receta</a></li>
                             <li><a class="dropdown-item" href="#">Something</a></li>
                             <li>
@@ -86,7 +84,7 @@ session_start();
                         <ul class="dropdown-menu dropdown-menu-info">
                             <li><a class="dropdown-item" href="#">Configuración</a></li>
                             <li><a class="dropdown-item" href="#">Preferencias </a></li>
-                            <li><a class="dropdown-item" href="login.php">Cerrar sesión</a></li>
+                            <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
                         </ul>
                     </div>
 
@@ -94,105 +92,95 @@ session_start();
             </div>
         </div>
     </nav>
-    <div class="container">
-        <div class="list-group">
-            <?php
-            include "./php/resbusqueda.php"
-            ?>
-            <!-- Esta lista puede irse agregando automaticamente con un ciclo en php (por lo que solo ocuparias una linea de codigo html xdxd)---->
+
+    <!--Sección Hero -> (Sección principal) -->
+    <section>
+        <div class="container">
+            <!--Formulario-->
+            <h1> Visualizar Recetas </h1>
+            <br>
         </div>
-    </div>
+    </section>
+
+    <!--Otra parte -->
+    <section>
+        <div class="container">
+            <h1>Buen dia 
+                <?php
+                $usuario=$_SESSION['Usuario'];
+                echo $usuario;
+                ?>
+            </h1>
+            <center>
+                <h2>
+                    < Tus Recetas>
+                </h2>
+            </center>
+            <br>
+            <div class="row row-cols-1 row-cols-md-3 g-2">
+                <!--Empiezan las cards -->
+                <?php
+                include "./php/misRecetas.php";
+                ?>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+    </script>
+    <!-- My script -->
+    <script src="js/create_receta.js"></script>
+
+
+    <!--footer-->
+    <section>
+        <footer class="bg-dark text-white py-4">
+            <div class="container">
+                <div class="row">
+                    <!-- LOGO -->
+                    <a href="#" class="col-3 text-reser text-uppercase d-flex align-items-center">
+                        <img src="images/cocina.png" width="75" alt="Logo de la página web" class="img-logo mr-2">
+                        Recetario
+                    </a>
+                    <!-- MENÚ -->
+                    <ul class="col-3 list-unstyled">
+                        <li class="font-weight-bold text-uppercase">
+                            Redes sociales
+                        </li>
+                        <li class="d-flex justify-content-between">
+                            <a href="#" class="text-reset">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+
+                            <a href="#" class="text-reset">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+
+                            <a href="#" class="text-reset">
+                                <i class="fa-brands fa-square-twitter"></i>
+                            </a>
+
+                            <a href="#" class="text-reset">
+                                <i class="fa-brands fa-pinterest"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- Social networks -->
+                </div>
+            </div>
+        </footer>
+    </section>
 
 
 </body>
 
-<!--Modal de busqueda-->
-<div class="modal fade" role="dialog" tabindex="-1" id="myModal">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4>Filtros de búsqueda</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="filter">
-                    <form method="POST" action="resultadoBusqueda.php">
-                        <label for="platillo">Platillo específico</label><br>
-                        <input id="platillo" placeholder="Platillo específico"></input>
-                        <br>
-                        <select>
-                            <option value="" selected disabled>Tipo de comida</option>
-                            <option value="vegana">Vegana</option>
-                            <option value="vegetariana">Vegetariana</option>
-                            <option value="carnivora">Carnívora</option>
-                            <option value="sinfiltro">Sin preferencia</option>
-                        </select>
-                        <br>
-                        <label for="ingredientes">Ingredientes</label>
-
-                        <input type="text" id="ingredientes" data-role="tagsinput" data-class="label-info" placeholder="Ingredientes" />
-
-                        <label for="ingredientesN">Ingredientes no deseados</label>
-                        <input type="text" id="ingredientesN" data-role="tagsinput" data-class="label-info" placeholder="Ingredientes no deseados" />
-                        <br>
-                        <div>
-                            <button class="btn btn-primary" type="buttom" data-bs-dismiss="modal">Cerrar</button>
-                            <a href="resultadoBusqueda.php">
-                                <button class="btn btn-primary" type="submit">Buscar</button>
-                            </a>
-                        </div>
 
 
-                    </form>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <p>Ultimate&nbsp;<span style="color: rgb(32, 33, 36);">® GRACIAS A DIOS Q ES VIERNES</span></p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
-</script>
-
-<!--footer-->
-<div class=" fixed-bottom">
-    <footer class="bg-dark text-white py-4">
-        <div class="container">
-            <div class="row">
-                <!-- LOGO -->
-                <a href="index.php" class="col-3 text-reser text-uppercase d-flex align-items-center">
-                    <img src="images/cocina.png" width="75" alt="Logo de la página web" class="img-logo mr-2">
-                    Recetario
-                </a>
-                <!-- MENÚ -->
-                <ul class="col-3 list-unstyled">
-                    <li class="font-weight-bold text-uppercase">
-                        Redes sociales
-                    </li>
-                    <li class="d-flex justify-content-between">
-                        <a href="#" class="text-reset">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-
-                        <a href="#" class="text-reset">
-                            <i class="fa-brands fa-whatsapp"></i>
-                        </a>
-
-                        <a href="#" class="text-reset">
-                            <i class="fa-brands fa-square-twitter"></i>
-                        </a>
-
-                        <a href="#" class="text-reset">
-                            <i class="fa-brands fa-pinterest"></i>
-                        </a>
-                    </li>
-                </ul>
-                <!-- Social networks -->
-            </div>
-        </div>
-    </footer>
-</div>
 <script src="js/Bootstrap-Tags-Input-bootstrap-tagsinput-custom.js"></script>
 <script src="js/Bootstrap-Tags-Input-bootstrap-tagsinput.min.js"></script>
 
