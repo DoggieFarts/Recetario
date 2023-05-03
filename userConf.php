@@ -41,7 +41,7 @@ session_start();
         </button>
 
         <div class="collapse navbar-collapse" id="navbar-toggler">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.php">
                 <img src="images/cocina.png" width="50" alt="Logo de la página web">
             </a>
 
@@ -87,8 +87,7 @@ session_start();
                         ?>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-info">
-                        <li><a class="dropdown-item" href="#">Configuración</a></li>
-                        <li><a class="dropdown-item" href="#">Preferencias </a></li>
+                        <li><a class="dropdown-item" href="userConf.php">Configuración</a></li>
                         <li><a class="dropdown-item" href="login.php">Cerrar sesión</a></li>
                     </ul>
                 </div>
@@ -104,13 +103,33 @@ session_start();
                <hr>
                 <!-- Drop Izquierda -->
                 <div class="btn-group dropright">
-                    <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropright
+                    <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Grupos
                     </button>
                     <div class="dropdown-menu">
                         <!-- Dropdown menu links -->
+                        <a class="dropdown-item" href="#">Crear grupo</a> <!-- Aqui crear un modal con los datos del grupo -->
+                        <!-- Agregar PHP aqui cuando x persona pertenezca a grupo o haya creado un grupo agregar opciones -->
+                        <a class="dropdown-item" href="#">Observar grupo</a>
                     </div>
                 </div>
+<br>
+                <br>
+
+                <div class="btn-group dropright">
+                    <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Alergias
+                    </button>
+                    <div class="dropdown-menu">
+                        <!-- Dropdown menu links -->
+                        <a class="dropdown-item" href="#">Agregar alergias</a> <!-- Aqui crear un modal con los datos de las alergias -->
+                        <a class="dropdown-item" href="#">Observar alergias</a>
+                        <a class="dropdown-item" href="#">Remover alergias</a>
+                    </div>
+                </div>
+                <br>
+
+
             </div>
             <div class="col-sm">
                <hr>
