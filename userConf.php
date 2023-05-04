@@ -108,11 +108,74 @@ session_start();
                     </button>
                     <div class="dropdown-menu">
                         <!-- Dropdown menu links -->
-                        <a class="dropdown-item" href="#">Crear grupo</a> <!-- Aqui crear un modal con los datos del grupo -->
+                        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalGrupo">Crear grupo</a> <!-- Aqui crear un modal con los datos del grupo DONE-->
                         <!-- Agregar PHP aqui cuando x persona pertenezca a grupo o haya creado un grupo agregar opciones -->
-                        <a class="dropdown-item" href="#">Observar grupo</a>
+                        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#observarGrupoModal">Observar grupo</a>
+                        <!--- IF usuario pertecene a grupo then y que aparezca esta opcion de observar recetas filtrada por su grupo --->
+                        <a class="dropdown-item" href="#" >Observar recetas de grupo</a>
                     </div>
                 </div>
+                <!-- Modal Grupo -->
+                <div class="modal fade" id="modalGrupo" tabindex="-1" aria-labelledby="modalGrupo" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="modalGrupo">Creación de grupo</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <form>
+                            <div class="modal-body">
+                                <label for="nombreGrupo" class="form-label">Nombre del grupo</label>
+                                <input type="text" class="form-control" id="nombreGrupo">
+                                <hr>
+                                <h2>Agregar usuarios</h2>
+                                <label for="inputEmail" class="form-label">Correo Electrónico</label>
+                                <input type="email" class="form-control" id="inputEmail">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="submit" class="btn btn-primary">Crear grupo</button>
+                            </div>
+                            </form>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal Observar Grupo -->
+                <div class="modal fade" id="observarGrupoModal" tabindex="-1" aria-labelledby="observarGrupoModal" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="observarModalGrupo">Observación de grupo</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+
+                                <div class="modal-body">
+                                    <label for="nombreGrupo" class="form-label">Nombre del grupo:</label>
+                                    <label id="nombreGrupo" class="form-label">Grupo #1</label> <!-- Aqui poner php con nombre del grupo --->
+                                    <hr>
+                                    <h2>Usuarios que pertenecen al grupo</h2>
+                                    <label for="inputEmail" class="form-label">Correo Electrónico:</label>
+                                    <label id="inputEmail" class="form-label">ejemplo@ejemplo.com</label> <!-- Aqui poner php con correo del usuario --->
+                                    <br>
+                                    <label for="inputNombreUsuario" class="form-label">Usuario:</label>
+                                    <label id="inputNombreUsuario" class="form-label">David</label> <!-- Aqui poner php con nombre del usuario --->
+                                        <br>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                    <button type="submit" class="btn btn-primary">Editar grupo</button>
+
+                                </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
 <br>
                 <br>
 
