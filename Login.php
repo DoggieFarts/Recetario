@@ -26,7 +26,7 @@
 <body>
 
   <div class="seccion-derecha">
-    <!-- Contenido de la sección derecha -->
+    <img src="images/cocinero.png" class="img-thumbnail" alt="...">
 
   </div>
 

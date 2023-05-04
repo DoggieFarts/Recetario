@@ -13,55 +13,60 @@
   <!--Favicon - icono de la pestaña-->
 
   <!--My CSS-->
-  <link href="login.css" rel="stylesheet">
+  <link href="register.css" rel="stylesheet">
 
 </head>
 
 <body>
 
 
-<section>
+<div class="box">
+  <span class="borderLine"></span>
+  <form method="post" autocomplete="off" >
+    <h2>Registro de usuario</h2>
+    <div class="inputBox">
+      <input type="text" required="required">
+      <span>Nombre</span>
+      <i></i>
+    </div>
 
-  <div class="form-box">
-    <div class="form-value">
-      <form method="post">
-        <h2>Registro de usuario</h2>
-        <div class="inputbox">
-          <input type="text" required name="name">
-          <label for="">Nombre</label>
-        </div>
-        <div class="inputbox">
-          <input type="text" required name="ApellidoP">
-          <label for="">Apellido Paterno</label>
-        </div>
-        <div class="inputbox">
-          <input type="text" required name="ApellidoM">
-          <label for="">Apellido Materno</label>
-        </div>
-        <div class="inputbox">
-          <ion-icon name="mail-outline"></ion-icon>
-          <input type="email" required name="correo">
-          <label for="">Correo Electrónico </label>
-        </div>
+    <div class="inputBox">
+      <input type="text" required="required">
+      <span>Apellido paterno</span>
+      <i></i>
+    </div>
 
-        <div class="inputbox">
-          <ion-icon name="lock-closed-outline"></ion-icon>
-          <input type="password" required name="contraseña">
-          <label for="">Contraseña</label>
-        </div>
+    <div class="inputBox">
+      <input type="text" required="required">
+      <span>Apellido materno</span>
+      <i></i>
+    </div>
 
-        <button type="submit">
-          Registrar
-        </button>
-        <?php
-          // echo'<p>antes</p>';
-          include "./php/registro.php";
-        ?>
-      </form>
+    <div class="inputBox">
+      <input type="email" required="required" autocomplete="off" >
+      <span>Correo electrónico</span>
+      <i></i>
+    </div>
+
+    <div class="inputBox">
+      <input type="password" required="required">
+      <span>Contraseña</span>
+      <i></i>
+    </div>
+    <div class="links">
+      <a href="login.php">¿Iniciar sesión?</a>
 
     </div>
-  </div>
-</section>
+    <input type="submit">
+    <?php
+    // echo'<p>antes</p>';
+    include "./php/registro.php";
+    ?>
+  </form>
+</div>
+<div class="clearfix"></div>
+
+
 
 <!-- Pagina para iconos -->
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
