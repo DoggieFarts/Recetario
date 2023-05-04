@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(isset($_POST['cerrars'])){
+                session_destroy();
+}
 require "./php/conexion.php";            
 if(isset($_POST['correo'])){
 $usuario = $_POST['correo'];

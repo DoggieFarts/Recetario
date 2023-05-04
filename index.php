@@ -84,7 +84,11 @@ session_start();
             <ul class="dropdown-menu dropdown-menu-info">
               <li><a class="dropdown-item" href="#">Configuración</a></li>
               <li><a class="dropdown-item" href="#">Preferencias </a></li>
-              <li><a class="dropdown-item" href="login.php">Cerrar sesión</a></li>
+              <li>
+                <form method="post" action="login.php"><button type="submit" name="cerrars"> <a class="dropdown-item" >Cerrar sesión</a>
+                </button>
+                </form>
+              </li>
             </ul>
           </div>
 
