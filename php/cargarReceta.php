@@ -19,7 +19,8 @@ if (isset($_POST['nombre'])) {
         $tmp_name = $_FILES["imagens"]["tmp_name"];
         $nombrei = $_FILES['imagens']['name'];
         //if (! is_dir('imgRecetas') ) mkdir ( 'imgRecetas' , 0755);
-        $carpeta = "./imgRecetas/Usr" . $creador . "/";
+        $carpeta = "./imgRecetas/Usr".$creador;
+        $config['upload_path'] = $carpeta;
         if (!is_dir($carpeta)) {
             if (mkdir($carpeta, 0777, true)) {
                 $destino =  $carpeta . $Idres . $nombrei;
