@@ -44,7 +44,7 @@ session_start();
         </a>
 
         <form class="d-flex" role="search" method="POST" action="resultadoBusqueda.php">
-          <input name="barrbus"class="form-control me-1" type="text" placeholder="Buscar" aria-label="Search" size="40">
+          <input name="barrbus" class="form-control me-1" type="text" placeholder="Buscar" aria-label="Search" size="40">
           <a href="#myModal" data-bs-toggle="modal"><img src="images/buscar.png" width="30" alt="buscador">
           </a>
           <!--<button class="btn btn-outline-success" type="submit">Buscar</button>-->
@@ -82,8 +82,18 @@ session_start();
               ?>
             </button>
             <ul class="dropdown-menu dropdown-menu-info">
+<<<<<<< HEAD
               <li><a class="dropdown-item" href="userConf.php">Configuración</a></li>
               <li><a class="dropdown-item" href="login.php">Cerrar sesión</a></li>
+=======
+              <li><a class="dropdown-item" href="#">Configuración</a></li>
+              <li><a class="dropdown-item" href="#">Preferencias </a></li>
+              <li>
+                <form method="post" action="login.php"><button type="submit" name="cerrars"> <a class="dropdown-item">Cerrar sesión</a>
+                  </button>
+                </form>
+              </li>
+>>>>>>> 7111fe8 (imagenes)
             </ul>
           </div>
 

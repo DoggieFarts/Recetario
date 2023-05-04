@@ -27,7 +27,7 @@ if (isset($_POST['nombre'])) {
                 if (move_uploaded_file($tmp_name, $destino)) {
                     echo "se subio";
                 } else {
-                    echo $_FILES['image']['error'];
+                    echo $_FILES['imagens']['error'];
                 }
             }else{
                 die('Fallo al crear las carpetas...');

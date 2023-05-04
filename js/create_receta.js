@@ -87,10 +87,7 @@ function addInput(event){
     medida.name="medida"+i;
 
     //Opciones en el select
-    var opciones = document.createElement("option");
-    opciones.value="Medida"
-    opciones.text="Medida"
-    medida.add(opciones);
+    
     var opciones = document.createElement("option");
     opciones.value="L"
     opciones.text="L"
@@ -118,6 +115,10 @@ function addInput(event){
     var opciones = document.createElement("option");
     opciones.value="pz"
     opciones.text="pz"
+    medida.add(opciones);
+    var opciones = document.createElement("option");
+    opciones.value="paq"
+    opciones.text="paq"
     medida.add(opciones);
 
     var placeholderOption = document.createElement("option");
