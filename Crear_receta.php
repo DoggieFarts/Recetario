@@ -93,7 +93,10 @@ session_start();
                   </button>
                 </form>
               </li>
+<<<<<<< HEAD
 >>>>>>> 7111fe8 (imagenes)
+=======
+>>>>>>> Axel
             </ul>
           </div>
 
