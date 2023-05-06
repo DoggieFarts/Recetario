@@ -2,6 +2,7 @@
 require "./php/conexion.php";
 //echo"sin id";
 $sql1 = "SELECT * FROM `recetas`";
+$error = 0;
 
 $res = $con->query($sql1);
 //echo"antes del primer if";
@@ -19,7 +20,7 @@ if (isset($_POST['nombre'])) {
         $tmp_name = $_FILES["imagens"]["tmp_name"];
         $nombrei = $_FILES['imagens']['name'];
         //if (! is_dir('imgRecetas') ) mkdir ( 'imgRecetas' , 0755);
-        $carpeta = "./imgRecetas/Usr".$creador;
+        $carpeta = "./imgRecetas/Usr" . $creador;
         $config['upload_path'] = $carpeta;
         if (!is_dir($carpeta)) {
             if (mkdir($carpeta, 0777, true)) {
@@ -29,7 +30,7 @@ if (isset($_POST['nombre'])) {
                 } else {
                     echo $_FILES['imagens']['error'];
                 }
-            }else{
+            } else {
                 die('Fallo al crear las carpetas...');
             }
         }
@@ -47,47 +48,72 @@ if (isset($_POST['nombre'])) {
             //echo $ning;
             for ($x = 1; $x <= $ning; $x++) {
                 //echo "for";
-                $ingrediente = $_POST['ingrediente' . $x];
-                $cantidad = $_POST['cantidad' . $x];
-                $medida = $_POST['medida' . $x];
-                $sqling = "SELECT * FROM ingredientes WHERE ingrediente = '$ingrediente'";
-                //echo $sqling;
-                $res = $con->query($sqling);
-                if ($res->num_rows > 0) {
-                    $sqlingrec = "INSERT INTO recetasIngredientes (recetas_idrecetas,ingredientes_ingrediente,cantidad,unidad)
-                    VALUES ('$Idres','$ingrediente','$cantidad','$medida')";
-                    if ($con->query($sqlingrec) == true) {
-                        // header("Location:./index.php");
+                if (isset($_POST['ingrediente' . $x])) {
+                    $ingrediente = $_POST['ingrediente' . $x];
+                    if (isset($_POST['cantidad' . $x])) {
+                        $cantidad = $_POST['cantidad' . $x];
+                        $medida = $_POST['medida' . $x];
+                        $sqling = "SELECT * FROM ingredientes WHERE ingrediente = '$ingrediente'";
+                        //echo $sqling;
+                        $res = $con->query($sqling);
+                        if ($res->num_rows > 0) {
+                            $sqlingrec = "INSERT INTO recetasIngredientes (recetas_idrecetas,ingredientes_ingrediente,cantidad,unidad)
+                            VALUES ('$Idres','$ingrediente','$cantidad','$medida')";
+                            if ($con->query($sqlingrec) == true) {
+                                // header("Location:./index.php");
+                            } else {
+                                echo "<br><p style='color: rgb(136, 1, 1);'>Error al guardar relacion</p>";
+                            }
+                        } else {
+                            $sqling = "INSERT INTO ingredientes (ingrediente) VALUES ('$ingrediente')";
+                            if ($con->query($sqling) == true) {
+                                $sqlingrec = "INSERT INTO recetasIngredientes (recetas_idrecetas,ingredientes_ingrediente,cantidad,unidad)
+                                VALUES ('$Idres','$ingrediente','$cantidad','$medida')";
+                                if ($con->query($sqlingrec) == true) {
+                                    // header("Location:./index.php");
+                                } else {
+                                    echo "<br><p style='color: rgb(136, 1, 1);'>Error al guardar relacion</p>";
+                                }
+                            } else {
+                                echo "<br><p style='color: rgb(136, 1, 1);'>Error al guardar el ingrediente</p>";
+                            }
+                        }
                     } else {
-                        echo "<br><p style='color: rgb(136, 1, 1);'>Error al guardar relacion</p>";
+                        echo "<br><p style='color: rgb(136, 1, 1);'>Debe de especificar la cantidad del ingrediente</p>";
+                        $sqld = "DELETE FROM recetas WHERE idrecetas ='$Idres' ";
+                        $con->query($sqld);
+                        $error = 1;
+                        break;
                     }
-                } else {
-                    $sqling = "INSERT INTO ingredientes (ingrediente) VALUES ('$ingrediente')";
-                    if ($con->query($sqling) == true) {
-                        $sqlingrec = "INSERT INTO recetasIngredientes (recetas_idrecetas,ingredientes_ingrediente,cantidad,unidad)
-                    VALUES ('$Idres','$ingrediente','$cantidad','$medida')";
-                        if ($con->query($sqlingrec) == true) {
-                            // header("Location:./index.php");
+                }else{
+                    echo "<br><p style='color: rgb(136, 1, 1);'>No puede dejar ingredientes vacios</p>";
+                        $sqld = "DELETE FROM recetas WHERE idrecetas ='$Idres' ";
+                        $con->query($sqld);
+                        $error = 1;
+                        break;
+                }
+            }
+            if ($error == 0) {
+                for ($x = 1; $x <= $ning1; $x++) {
+                    //echo "for";
+                    if (isset($_POST['paso' . $x])) {
+                        $paso = $_POST['paso' . $x];
+                        $pason = $x;
+                        $sqlpa = "INSERT INTO Pasos (numPasos,paso,recetas_idrecetas,recetas_creador)
+                    VALUES ('$pason','$paso','$Idres','$creador')";
+                        //echo $sqlpa;
+                        if ($con->query($sqlpa) == true) {
+                            if ($x == $ning1)
+                                header("Location:./index.php");
                         } else {
                             echo "<br><p style='color: rgb(136, 1, 1);'>Error al guardar relacion</p>";
                         }
                     } else {
-                        echo "<br><p style='color: rgb(136, 1, 1);'>Error al guardar el ingrediente</p>";
+                        echo "<br><p style='color: rgb(136, 1, 1);'>No deje pasos en blanco</p>";
+                        $sqld = "DELETE FROM recetas WHERE idrecetas ='$Idres' ";
+                        $con->query($sqld);
+                        break;
                     }
-                }
-            }
-            for ($x = 1; $x <= $ning1; $x++) {
-                //echo "for";
-                $paso = $_POST['paso' . $x];
-                $pason = $x;
-                $sqlpa = "INSERT INTO Pasos (numPasos,paso,recetas_idrecetas,recetas_creador)
-                    VALUES ('$pason','$paso','$Idres','$creador')";
-                //echo $sqlpa;
-                if ($con->query($sqlpa) == true) {
-                    if ($x == $ning1)
-                        header("Location:./index.php");
-                } else {
-                    echo "<br><p style='color: rgb(136, 1, 1);'>Error al guardar relacion</p>";
                 }
             }
         } else {
