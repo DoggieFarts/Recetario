@@ -75,7 +75,7 @@ if ($res->num_rows > 0) {
   $res2 = $con->query($sql2);
   if ($res2->num_rows > 0) {
     while ($row2 = $res2->fetch_assoc()) {
-        echo'<h4>Item '.$row2["numPasos"].'</h4>
+        echo'<h4>Paso '.$row2["numPasos"].'</h4>
         <p>'.$row2["paso"].'
         </p>';
     }
