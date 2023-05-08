@@ -57,9 +57,10 @@
       <a href="login.php">¿Iniciar sesión?</a>
 
     </div>
-    <input type="submit">
+    <input name="mandar" type="submit">
     <?php
     // echo'<p>antes</p>';
+    echo"registro";
     include "./php/registro.php";
     ?>
   </form>

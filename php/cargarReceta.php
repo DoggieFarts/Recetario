@@ -24,7 +24,7 @@ if (isset($_POST['nombre'])) {
         $config['upload_path'] = $carpeta;
         if (!is_dir($carpeta)) {
             if (mkdir($carpeta, 0777, true)) {
-                $destino =  $carpeta . $Idres . $nombrei;
+                $destino =  $carpeta ."/". $Idres . $nombrei;
                 if (move_uploaded_file($tmp_name, $destino)) {
                     echo "se subio";
                 } else {
