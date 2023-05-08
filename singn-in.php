@@ -60,7 +60,7 @@
     <input name="mandar" type="submit">
     <?php
     // echo'<p>antes</p>';
-    echo"registro";
+    //echo"registro";
     include "./php/registro.php";
     ?>
   </form>
