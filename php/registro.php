@@ -1,7 +1,11 @@
 <?php
 require "./php/conexion.php";
+<<<<<<< HEAD
 //if (isset($_POST['mandar'])) {
     //echo"antes if";
+=======
+if (isset($_POST['mandar'])) {
+>>>>>>> Axel
     if (isset($_POST['name'])) {
         $usuario = $_POST['name'];
         if (isset($_POST['ApellidoP'])) {
@@ -21,10 +25,14 @@ require "./php/conexion.php";
                         } else {
                             $IdUs = 1;
                         }
+<<<<<<< HEAD
 echo"antes del rejistro";
+=======
+>>>>>>> Axel
                         $cont = $_POST['contraseña'];
                         $sql = "INSERT INTO `usuarios` (`idusuarios`, `nombre`, `apP`, `apM`, `Contraseña`, `correo`)VALUES
-                    ($IdUs,'$usuario','$app','$apm','$cont','$corr')";
+                        ($IdUs,'$usuario','$app','$apm','$cont','$corr')";
+                        echo $sql;
                         if ($con->query($sql) == true) {
                             header("Location:login.php");
                         } else {
@@ -47,5 +55,5 @@ echo"antes del rejistro";
     } else {
         echo '<p class="errorl">Error, porfavor llene todos los campos</p>';
     }
-//}
+}
 ?>
