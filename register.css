@@ -40,8 +40,8 @@ body {
 
 .box {
     position: relative;
-    width: 380px;
-    height: 420px;
+    width: 25%;
+    height: 50vw;
     background: #171f39;
     border-radius: 8px;
     overflow: hidden;
