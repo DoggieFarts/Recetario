@@ -59,11 +59,6 @@
     </div>
     <input name="mandar" type="submit">
     <?php
-    // echo'<p>antes</p>';
-<<<<<<< HEAD
-    //echo"registro";
-=======
->>>>>>> Axel
     include "./php/registro.php";
     ?>
   </form>
