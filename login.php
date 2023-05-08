@@ -1,68 +1,62 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 
 <head>
   <!--Metadatos-->
   <meta charset="UTF-8">
-  <meta name="author" content="Team: Ultimate">
-  <meta name="description" content="Página web de recetas">
+  <meta name="ARCM y AT" content="Team: Ultimate">
+  <meta name="description" content="Recetario Ultimate">
   <meta name="keywords" content="HTML, CSS, JavaScript, ">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--Titulo-->
-  <title>Mi Recetario</title>
+  <title>Iniciar sesión</title>
   <!--Favicon - icono de la pestaña-->
-
+  <link rel="icon" type="image/x-icon" href="images/cocinero.png">
   <!--My CSS-->
   <link href="login.css" rel="stylesheet">
+  <!--Bootstrap-->
+
+  <!-- Google Font Link Icons-->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 </head>
 
+
 <body>
 
+  <div class="seccion-derecha">
+    <img src="images/cocinero.png" class="img-thumbnail" alt="...">
 
-<section>
-
-  <div class="form-box">
-    <div class="form-value">
-      <form method="post">
-        <h2>Inicio de Sesión</h2>
-
-        <div class="inputbox">
-          <ion-icon name="mail-outline"></ion-icon>
-          <input type="email" required name="correo">
-          <label for="">Correo Electrónico </label>
-        </div>
-
-        <div class="inputbox">
-          <ion-icon name="lock-closed-outline"></ion-icon>
-          <input type="password" required name="password">
-          <label for="">Contraseña</label>
-        </div>
-
-        <div class="forget">
-          <label for=""><input type="checkbox">Recordarme</label>
-          <a href="#">Olvide Contraseña</a>
-        </div>
-
-        <button type="submit">
-          Iniciar sesión
-        </button>
-        <div class="register">
-          <p>No tengo una cuenta <a href="singn-in.php">Registrar</a> </p>
-        </div>
-        <?php
-          // echo'<p>antes</p>';
-          include "./php/log.php";
-        ?>
-      </form>
-
-    </div>
   </div>
-</section>
 
-<!-- Pagina para iconos -->
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <div class="box">
+    <span class="borderLine"></span>
+    <form method="post">
+      <h2>Inicia sesión</h2>
+      <div class="inputBox">
+        <input type="text" required="required">
+        <span>Usuario</span>
+        <i></i>
+      </div>
+
+      <div class="inputBox">
+        <input type="password" required="required">
+        <span>Contraseña</span>
+        <i></i>
+      </div>
+      <div class="links">
+        <a href="#">¿Has olvidado tu contraseña?</a>
+        <a href="singn-in.php">Regístrarse</a>
+      </div>
+      <input type="submit" value="Inicia sesión">
+      <?php
+          // echo'<p>antes</p>';
+      include "./php/log.php";
+      ?>
+    </form>
+  </div>
+  <div class="clearfix"></div>
 </body>
 
 </html>
