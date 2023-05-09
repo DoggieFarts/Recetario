@@ -1,7 +1,7 @@
 <?php
 require "./php/conexion.php";
 if (isset($_POST['mandar'])) {
-    //echo"antes if";
+>>>>>>> Axel
     if (isset($_POST['name'])) {
         $usuario = $_POST['name'];
         if (isset($_POST['ApellidoP'])) {
