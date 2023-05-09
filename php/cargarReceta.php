@@ -20,7 +20,7 @@ if (isset($_POST['nombre'])) {
         $tmp_name = $_FILES["imagens"]["tmp_name"];
         $nombrei = $_FILES['imagens']['name'];
         //if (! is_dir('imgRecetas') ) mkdir ( 'imgRecetas' , 0755);
-        $carpeta = "./imgRecetas/Usr" . $creador;
+        $carpeta = "./imgRecetas/Usr" . $creador."/Receteta".$Idres;
         $config['upload_path'] = $carpeta;
         if (!is_dir($carpeta)) {
             if (mkdir($carpeta, 0777, true)) {
@@ -33,6 +33,13 @@ if (isset($_POST['nombre'])) {
             } else {
                 die('Fallo al crear las carpetas...');
             }
+        }else{
+            $destino =  $carpeta ."/". $Idres . $nombrei;
+                if (move_uploaded_file($tmp_name, $destino)) {
+                    echo "se subio";
+                } else {
+                    echo $_FILES['imagens']['error'];
+                }
         }
         $nombre = $_POST['nombre'];
         $categoria = $_POST['categoria'];
@@ -99,8 +106,32 @@ if (isset($_POST['nombre'])) {
                     if (isset($_POST['paso' . $x])) {
                         $paso = $_POST['paso' . $x];
                         $pason = $x;
-                        $sqlpa = "INSERT INTO Pasos (numPasos,paso,recetas_idrecetas,recetas_creador)
-                    VALUES ('$pason','$paso','$Idres','$creador')";
+                        $tmp_name = $_FILES["imp".$x]["tmp_name"];
+                        $nombrei = $_FILES['imp'.$x]['name'];
+                        //if (! is_dir('imgRecetas') ) mkdir ( 'imgRecetas' , 0755);
+                        $carpeta = "./imgRecetas/Usr" . $creador."/Receteta".$Idres."/pasos";
+                        $config['upload_path'] = $carpeta;
+                        if (!is_dir($carpeta)) {
+                            if (mkdir($carpeta, 0777, true)) {
+                                $destino =  $carpeta ."/". $Idres .$pason. $nombrei;
+                                if (move_uploaded_file($tmp_name, $destino)) {
+                                    echo "se subio";
+                                } else {
+                                    echo $_FILES['imp'.$x]['error'];
+                                }
+                            } else {
+                                die('Fallo al crear las carpetas...');
+                            }
+                        }else{
+                            $destino =  $carpeta ."/". $Idres .$pason. $nombrei;
+                                if (move_uploaded_file($tmp_name, $destino)) {
+                                    echo "se subio";
+                                } else {
+                                    echo $_FILES['imp'.$x]['error'];
+                                }
+                        }
+                        $sqlpa = "INSERT INTO Pasos (numPasos,paso,recetas_idrecetas,recetas_creador,imgpaso)
+                        VALUES ('$pason','$paso','$Idres','$creador','$destino')";
                         //echo $sqlpa;
                         if ($con->query($sqlpa) == true) {
                             if ($x == $ning1)
