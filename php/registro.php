@@ -1,11 +1,6 @@
 <?php
 require "./php/conexion.php";
-<<<<<<< HEAD
-//if (isset($_POST['mandar'])) {
-    //echo"antes if";
-=======
 if (isset($_POST['mandar'])) {
->>>>>>> Axel
     if (isset($_POST['name'])) {
         $usuario = $_POST['name'];
         if (isset($_POST['ApellidoP'])) {
@@ -25,10 +20,6 @@ if (isset($_POST['mandar'])) {
                         } else {
                             $IdUs = 1;
                         }
-<<<<<<< HEAD
-echo"antes del rejistro";
-=======
->>>>>>> Axel
                         $cont = $_POST['contraseña'];
                         $sql = "INSERT INTO `usuarios` (`idusuarios`, `nombre`, `apP`, `apM`, `Contraseña`, `correo`)VALUES
                         ($IdUs,'$usuario','$app','$apm','$cont','$corr')";
