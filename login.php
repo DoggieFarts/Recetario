@@ -35,13 +35,13 @@
     <form method="post">
       <h2>Inicia sesión</h2>
       <div class="inputBox">
-        <input type="text" required="required">
+        <input type="text" name="correo" required="required">
         <span>Usuario</span>
         <i></i>
       </div>
 
       <div class="inputBox">
-        <input type="password" required="required">
+        <input type="password" name="password" required="required">
         <span>Contraseña</span>
         <i></i>
       </div>

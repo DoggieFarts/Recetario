@@ -192,6 +192,10 @@ function addInput2(event) {
     name2.placeholder = "Digite su paso de la receta";
     name2.name = "paso" + j;
 
+    const inimg = document.createElement("input");
+    inimg.type="file";
+    inimg.name="imp"+j;
+
     const btn2 = document.createElement("n");
     btn2.className = "delete";
     btn2.innerHTML = "&times";
@@ -218,6 +222,7 @@ function addInput2(event) {
     input2.appendChild(flex2);
     flex2.appendChild(titulo);
     flex2.appendChild(name2);
+    flex2.appendChild(inimg);
     flex2.appendChild(btn2);
     flex2.appendChild(invi2);
 

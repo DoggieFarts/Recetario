@@ -25,31 +25,31 @@
   <form method="post" autocomplete="off" >
     <h2>Registro de usuario</h2>
     <div class="inputBox">
-      <input type="text" required="required">
+      <input type="text" required="required" name="name">
       <span>Nombre</span>
       <i></i>
     </div>
 
     <div class="inputBox">
-      <input type="text" required="required">
+      <input type="text" required="required" name="ApellidoP">
       <span>Apellido paterno</span>
       <i></i>
     </div>
 
     <div class="inputBox">
-      <input type="text" required="required">
+      <input type="text" required="required" name="ApellidoM">
       <span>Apellido materno</span>
       <i></i>
     </div>
 
     <div class="inputBox">
-      <input type="email" required="required" autocomplete="off" >
+      <input type="email" required="required" name="correo" autocomplete="off" >
       <span>Correo electrónico</span>
       <i></i>
     </div>
 
     <div class="inputBox">
-      <input type="password" required="required">
+      <input type="password" required="required" name="contraseña">
       <span>Contraseña</span>
       <i></i>
     </div>
@@ -57,9 +57,8 @@
       <a href="login.php">¿Iniciar sesión?</a>
 
     </div>
-    <input type="submit">
+    <input name="mandar" type="submit">
     <?php
-    // echo'<p>antes</p>';
     include "./php/registro.php";
     ?>
   </form>
