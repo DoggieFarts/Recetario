@@ -2,9 +2,9 @@
 require "./php/conexion.php";
 //echo"sin id";
 $creador= $_SESSION['ID'];
-if(isset($_POST['barrbus'])){
+if(isset($_GET['barrbus'])){
 //echo"if";
-$bus=$_POST['barrbus'];
+$bus=$_GET['barrbus'];
 $sql1 = "SELECT creador,idrecetas,r.nombre AS nombre ,r.Categoria AS Categoria,imagen,r.Region AS Region,r.tipoAlimentacion AS tipoAlimentacion
 FROM `recetas` r JOIN usuarios u ON(r.creador=u.idusuarios) JOIN recetasIngredientes ri
 ON (ri.recetas_idrecetas=r.idrecetas)WHERE (creador='$creador'

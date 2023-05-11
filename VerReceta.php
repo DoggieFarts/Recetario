@@ -40,11 +40,11 @@ session_start();
       </button>
 
       <div class="collapse navbar-collapse" id="navbar-toggler">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="./index.php">
           <img src="images/cocina.png" width="50" alt="Logo de la página web">
         </a>
 
-        <form class="d-flex" role="search" method="POST" action="resultadoBusqueda.php">
+        <form class="d-flex" role="search" method="GET" action="resultadoBusqueda.php">
           <input name="barrbus"class="form-control me-1" type="text" placeholder="Buscar" aria-label="Search" size="40">
           <a href="#myModal" data-bs-toggle="modal"><img src="images/buscar.png" width="30" alt="buscador">
           </a>
