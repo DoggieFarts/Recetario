@@ -24,3 +24,17 @@ if ($res->num_rows > 0) {
         }
     }
 }
+
+if(isset($_GET["buscEx"])){
+    
+    $platillo = $_GET["platillo"];
+    $alimentacion = $_GET["talimentacion"];
+    $ingredientes = $_GET["ingredientes"];
+    $ingredientesn = $_GET["ingredientesn"];
+    $sql1 = "SELECT creador,idrecetas,r.nombre AS nombre ,r.Categoria AS Categoria,imagen,r.Region AS Region,r.tipoAlimentacion AS tipoAlimentacion
+    FROM `recetas` r JOIN usuarios u ON(r.creador=u.idusuarios) JOIN recetasIngredientes ri
+    ON (ri.recetas_idrecetas=r.idrecetas)WHERE (creador='$creador'
+    or Titular='$creador')";
+    $sql2="AND (r.nombre='$bus' or ingredientes_ingrediente='$bus') GROUP BY idrecetas";
+    $sql=$sql1.$sql2;
+}
