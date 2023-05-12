@@ -40,7 +40,7 @@ session_start();
           <img src="images/cocina.png" width="50" alt="Logo de la página web">
         </a>
 
-        <form class="d-flex" role="search" method="POST" action="resultadoBusqueda.php">
+        <form class="d-flex" role="search" method="GET" action="resultadoBusqueda.php">
           <input name="barrbus"class="form-control me-1" type="text" placeholder="Buscar" aria-label="Search" size="40">
           <a href="#myModal" data-bs-toggle="modal"><img src="images/buscar.png" width="30" alt="buscador">
           </a>
@@ -246,28 +246,26 @@ session_start();
       </div>
       <div class="modal-body">
         <div class="filter">
-          <form method="POST" action="resultadoBusqueda.php">
+          <form method="GET" action="resultadoBusqueda.php">
             <label for="platillo">Platillo específico</label><br>
-            <input id="platillo" placeholder="Platillo específico"></input>
+            <input id="platillo" name="platillo" placeholder="Platillo específico"></input>
             <br>
-            <select>
+            <select name="talimentacion">
               <option value="" selected disabled>Tipo de comida</option>
-              <option value="vegana" >Vegana</option>
-              <option value="vegetariana" >Vegetariana</option>
-              <option value="carnivora" >Carnívora</option>
-              <option value="sinfiltro">Sin preferencia</option>
+              <option>Omnívora</option>
+              <option>Vegana</option>
+              <option>Vegeteriana</option>
             </select>
             <br>
             <label for="ingredientes">Ingredientes</label>
 
-            <input type="text" id="ingredientes" data-role="tagsinput" data-class="label-info" placeholder="Ingredientes" />
+            <input type="text" name="ingredientes" id="ingredientes" data-role="tagsinput" data-class="label-info" placeholder="Ingredientes" />
 
             <label for="ingredientesN">Ingredientes no deseados</label>
-            <input type="text" id="ingredientesN" data-role="tagsinput" data-class="label-info" placeholder="Ingredientes no deseados" />
+            <input type="text"  name="ingredientesn"id="ingredientesN" data-role="tagsinput" data-class="label-info" placeholder="Ingredientes no deseados" />
             <br>
             <div>
-              <button class="btn btn-primary" type="buttom" data-bs-dismiss="modal">Cerrar</button>
-              <button class="btn btn-primary" type="submit">Buscar</button>
+              <button class="btn btn-primary" name="buscEx" type="submit">Buscar</button>
             </div>
 
 

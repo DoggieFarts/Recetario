@@ -77,7 +77,8 @@ if ($res->num_rows > 0) {
     while ($row2 = $res2->fetch_assoc()) {
         echo'<h4>Paso '.$row2["numPasos"].'</h4>
         <p>'.$row2["paso"].'
-        </p>';
+        </p>
+        <img src="'.$row2["imgpaso"].'" class="img-fluid rounded-start" alt="...">';
     }
 
   }  
