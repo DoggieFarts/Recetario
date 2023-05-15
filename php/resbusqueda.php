@@ -31,10 +31,63 @@ if(isset($_GET["buscEx"])){
     $alimentacion = $_GET["talimentacion"];
     $ingredientes = $_GET["ingredientes"];
     $ingredientesn = $_GET["ingredientesn"];
-    $sql1 = "SELECT creador,idrecetas,r.nombre AS nombre ,r.Categoria AS Categoria,imagen,r.Region AS Region,r.tipoAlimentacion AS tipoAlimentacion
+    $sql = "SELECT creador,idrecetas,r.nombre AS nombre ,r.Categoria AS Categoria,imagen,r.Region AS Region,r.tipoAlimentacion AS tipoAlimentacion
     FROM `recetas` r JOIN usuarios u ON(r.creador=u.idusuarios) JOIN recetasIngredientes ri
     ON (ri.recetas_idrecetas=r.idrecetas)WHERE (creador='$creador'
-    or Titular='$creador')";
-    $sql2="AND (r.nombre='$bus' or ingredientes_ingrediente='$bus') GROUP BY idrecetas";
-    $sql=$sql1.$sql2;
+    or Titular='$creador') ";
+
+    if(isset( $_GET["ingredientesn"]) &&$ingredientesn!="" ){
+        $cadenai = explode(",", $ingredientesn);
+        $sqli="AND (";
+        $x=0;
+        foreach ($cadenai as $ingrediente) {       
+            if($x!=0){
+                $sqli=$sqli." OR ingredientes_ingrediente <> '$ingrediente'";
+            }else{
+                $sqli=$sqli."ingredientes_ingrediente <> '$ingrediente'";
+                $x++;
+            }
+        }
+        $sqli=$sqli.") ";
+        $sql=$sql.$sqli;
+    }
+    if(isset($_GET["platillo"])){
+        $sqln="AND (r.nombre = '$platillo') ";
+        $sql=$sql.$sqln;
+    }
+    if(isset( $_GET["talimentacion"])){
+        $sqlta="AND (r.tipoAlimentacion = '$alimentacion') ";
+        $sql=$sql.$sqlta;
+    }
+    if(isset( $_GET["ingredientes"])&&$ingredientes!=""){
+        $cadenai = explode(",", $ingredientes);
+        $sqli="AND (";
+        $x=0;
+        foreach ($cadenai as $ingrediente) {       
+            if($x!=0){
+                $sqli=$sqli." OR ingredientes_ingrediente = '$ingrediente'";
+            }else{
+                $sqli=$sqli."ingredientes_ingrediente = '$ingrediente'";
+                $x++;
+            }
+        }
+        $sqli=$sqli.") ";
+        $sql=$sql.$sqli;
+    }
+    $sqlf="GROUP BY idrecetas";
+    $sql=$sql.$sqlf;
+    //echo $sql;
+    $res = $con->query($sql);
+    if ($res->num_rows > 0) {
+        while ($row = $res->fetch_assoc()) {
+            
+            echo'<a href="VerReceta.php?id='.$row["idrecetas"].'&idu='.$row["creador"].'" class="list-group-item list-group-item-action">
+                    <img src="'.$row["imagen"].'" alt="..." class="img-thumbnail float-left" style="width: 15vw; ">
+                    '.$row["nombre"].'
+                    <br>Categoría: '.$row["Categoria"].'
+                    <br>Region: '.$row["Region"].'
+                    <br>Tipo de alimentacion: '.$row["tipoAlimentacion"].'
+                </a>';
+            }
+        }
 }
