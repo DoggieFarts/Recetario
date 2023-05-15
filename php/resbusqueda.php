@@ -76,7 +76,7 @@ if(isset($_GET["buscEx"])){
     }
     $sqlf="GROUP BY idrecetas";
     $sql=$sql.$sqlf;
-    echo $sql;
+    //echo $sql;
     $res = $con->query($sql);
     if ($res->num_rows > 0) {
         while ($row = $res->fetch_assoc()) {
