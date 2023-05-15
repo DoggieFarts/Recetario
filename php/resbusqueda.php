@@ -51,11 +51,11 @@ if(isset($_GET["buscEx"])){
         $sqli=$sqli.") ";
         $sql=$sql.$sqli;
     }
-    if(isset($_GET["platillo"])){
+    if(isset($_GET["platillo"])&&$platillo!=""){
         $sqln="AND (r.nombre = '$platillo') ";
         $sql=$sql.$sqln;
     }
-    if(isset( $_GET["talimentacion"])){
+    if(isset( $_GET["talimentacion"])&&$alimentacion!=""){
         $sqlta="AND (r.tipoAlimentacion = '$alimentacion') ";
         $sql=$sql.$sqlta;
     }
@@ -76,7 +76,7 @@ if(isset($_GET["buscEx"])){
     }
     $sqlf="GROUP BY idrecetas";
     $sql=$sql.$sqlf;
-    //echo $sql;
+    echo $sql;
     $res = $con->query($sql);
     if ($res->num_rows > 0) {
         while ($row = $res->fetch_assoc()) {
