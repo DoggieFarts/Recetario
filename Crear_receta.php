@@ -268,6 +268,48 @@ session_start();
   <script src="js/create_receta.js"></script>
 </body>
 
+<!--Modal de busqueda-->
+<div class="modal fade" role="dialog" tabindex="-1" id="myModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4>Filtros de búsqueda</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="filter">
+          <form method="GET" action="resultadoBusqueda.php">
+            <label for="platillo">Platillo específico</label><br>
+            <input id="platillo" name="platillo" placeholder="Platillo específico"></input>
+            <br>
+            <select name="talimentacion">
+              <option value="" selected disabled>Tipo de comida</option>
+              <option>Omnívora</option>
+              <option>Vegana</option>
+              <option>Vegeteriana</option>
+            </select>
+            <br>
+            <label for="ingredientes">Ingredientes</label>
+
+            <input type="text" name="ingredientes" id="ingredientes" data-role="tagsinput" data-class="label-info" placeholder="Ingredientes" />
+
+            <label for="ingredientesN">Ingredientes no deseados</label>
+            <input type="text"  name="ingredientesn"id="ingredientesN" data-role="tagsinput" data-class="label-info" placeholder="Ingredientes no deseados" />
+            <br>
+            <div>
+              <button class="btn btn-primary" name="buscEx" type="submit">Buscar</button>
+            </div>
+
+
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <p>Ultimate&nbsp;<span style="color: rgb(32, 33, 36);">® GRACIAS A DIOS Q ES VIERNES</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!--footer-->
 <footer class="bg-dark text-white py-4">
   <div class="container">

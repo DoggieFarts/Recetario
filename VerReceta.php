@@ -214,7 +214,8 @@ session_start();
 </body>
 
 
-<div class="modal fade" role="dialog" tabindex="-1" id="myModal">
+ <!--Modal de busqueda-->
+ <div class="modal fade" role="dialog" tabindex="-1" id="myModal">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -222,28 +223,26 @@ session_start();
       </div>
       <div class="modal-body">
         <div class="filter">
-          <form method="POST" action="#">
+          <form method="GET" action="resultadoBusqueda.php">
             <label for="platillo">Platillo específico</label><br>
-            <input id="platillo" placeholder="Platillo específico"></input>
+            <input id="platillo" name="platillo" placeholder="Platillo específico"></input>
             <br>
-            <select>
+            <select name="talimentacion">
               <option value="" selected disabled>Tipo de comida</option>
-              <option value="vegana">Vegana</option>
-              <option value="vegetariana">Vegetariana</option>
-              <option value="carnivora">Carnívora</option>
-              <option value="sinfiltro">Sin preferencia</option>
+              <option>Omnívora</option>
+              <option>Vegana</option>
+              <option>Vegeteriana</option>
             </select>
             <br>
             <label for="ingredientes">Ingredientes</label>
 
-            <input type="text" id="ingredientes" data-role="tagsinput" data-class="label-info" placeholder="Ingredientes" />
+            <input type="text" name="ingredientes" id="ingredientes" data-role="tagsinput" data-class="label-info" placeholder="Ingredientes" />
 
             <label for="ingredientesN">Ingredientes no deseados</label>
-            <input type="text" id="ingredientesN" data-role="tagsinput" data-class="label-info" placeholder="Ingredientes no deseados" />
+            <input type="text"  name="ingredientesn"id="ingredientesN" data-role="tagsinput" data-class="label-info" placeholder="Ingredientes no deseados" />
             <br>
             <div>
-              <button class="btn btn-primary" type="buttom" data-bs-dismiss="modal">Cerrar</button>
-              <button class="btn btn-primary" type="submit">Buscar</button>
+              <button class="btn btn-primary" name="buscEx" type="submit">Buscar</button>
             </div>
 
 
