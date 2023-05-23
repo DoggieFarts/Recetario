@@ -18,7 +18,7 @@ if ($res->num_rows > 0) {
                 <a href="VerReceta.php?id='.$row["idGrupos"].'&idu='.$row["titularG"].'">
                     <button type="button" class="btn btn-primary" style="--bs-btn-padding-y: .50rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .9rem;">
                         <img src="images/vision.png" class="image_see" width="27" alt="ojo de visualizar">
-                        Vizualizar Receta
+                        Vizualizar Grupo
                     </button>
                 </a>
                 </div>
@@ -27,5 +27,5 @@ if ($res->num_rows > 0) {
     </div>';
     }
 } else {
-    echo"<br><p style='color: rgb(136, 1, 1);'>No cuenta con recetas cargadas</p>";
+    echo"<br><p style='color: rgb(136, 1, 1);'>No cuenta con grupos creados o ni pertenece a alguno</p>";
 }
