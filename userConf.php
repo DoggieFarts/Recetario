@@ -3,6 +3,7 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <!--Metadatos-->
     <meta charset="UTF-8">
@@ -31,126 +32,130 @@ session_start();
 
 
 </head>
+
 <body>
-<!--Barra de Navegación-->
-<nav class="navbar navbar-expand-md navbar-light sticky-top">
-    <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler"
-                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <!--Barra de Navegación-->
+    <nav class="navbar navbar-expand-md navbar-light sticky-top">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <div class="collapse navbar-collapse" id="navbar-toggler">
-            <a class="navbar-brand" href="index.php">
-                <img src="images/cocina.png" width="50" alt="Logo de la página web">
-            </a>
-
-            <form class="d-flex" role="search" method="GET" action="resultadoBusqueda.php">
-                <input name="barrbus"class="form-control me-1" type="text" placeholder="Buscar" aria-label="Search" size="40">
-                <a href="#myModal" data-bs-toggle="modal"><img src="images/buscar.png" width="30" alt="buscador">
+            <div class="collapse navbar-collapse" id="navbar-toggler">
+                <a class="navbar-brand" href="index.php">
+                    <img src="images/cocina.png" width="50" alt="Logo de la página web">
                 </a>
-                <!--<button class="btn btn-outline-success" type="submit">Buscar</button>-->
-            </form>
+
+                <form class="d-flex" role="search" method="GET" action="resultadoBusqueda.php">
+                    <input name="barrbus" class="form-control me-1" type="text" placeholder="Buscar" aria-label="Search" size="40">
+                    <a href="#myModal" data-bs-toggle="modal"><img src="images/buscar.png" width="30" alt="buscador">
+                    </a>
+                    <!--<button class="btn btn-outline-success" type="submit">Buscar</button>-->
+                </form>
 
 
 
-            <ul class="navbar-nav d-flex justify-content-center align-items-center">
+                <ul class="navbar-nav d-flex justify-content-center align-items-center">
 
-                <div class="dropdown">
-                    <button class="btn btn-light dropdown-toggle btn-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="images/recetario.svg" width="27" alt="mi recetario">
-                        Mi Recetario
-                    </button>
-                    <ul class="dropdown-menu me-2 dropdown-menu-info">
-                        <li><a class="dropdown-item active" href="MisRecetas.php">Mis Recetas</a></li>
-                        <li><a class="dropdown-item" href="Crear_receta.php">Crear Receta</a></li>
-                        <li><a class="dropdown-item" href="#">Something</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item " href="#">Invitar</a></li>
-                    </ul>
-                </div>
-
-                <button type="button" class="btn btn-light btn-2">
-                    <img src="images/carrito-de-supermercado.png" width="27" alt="carrito de compras">
-                    Comprar
-                </button>
-
-
-                <div class="dropdown">
-                    <button class="btn btn-light dropdown-toggle btn-3" type="button" data-bs-toggle="dropdown"
-                            aria-expanded="true">
-                        <img src="images/user.png" width="27" alt="carrito de compras">
-                        <?php
-                        include "./php/session.php"
-                        ?>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-info">
-                        <li><a class="dropdown-item" href="userConf.php">Configuración</a></li>
-                        <li><a class="dropdown-item" href="login.php">Cerrar sesión</a></li>
-                    </ul>
-                </div>
-
-            </ul>
-        </div>
-    </div>
-</nav>
-<section>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm">
-               <hr>
-                <!-- Drop Izquierda -->
-                <div class="btn-group dropright">
-                    <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Grupos
-                    </button>
-                    <div class="dropdown-menu">
-                        <!-- Dropdown menu links -->
-                        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalGrupo">Crear grupo</a> <!-- Aqui crear un modal con los datos del grupo DONE-->
-                        <!-- Agregar PHP aqui cuando x persona pertenezca a grupo o haya creado un grupo agregar opciones -->
-                        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#observarGrupoModal">Observar grupo</a>
-                        <!--- IF usuario pertecene a grupo then y que aparezca esta opcion de observar recetas filtrada por su grupo --->
-                        <a class="dropdown-item" href="#" >Observar recetas de grupo</a>
+                    <div class="dropdown">
+                        <button class="btn btn-light dropdown-toggle btn-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="images/recetario.svg" width="27" alt="mi recetario">
+                            Mi Recetario
+                        </button>
+                        <ul class="dropdown-menu me-2 dropdown-menu-info">
+                            <li><a class="dropdown-item active" href="MisRecetas.php">Mis Recetas</a></li>
+                            <li><a class="dropdown-item" href="Crear_receta.php">Crear Receta</a></li>
+                            <li><a class="dropdown-item" href="#">Something</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item " href="#">Invitar</a></li>
+                        </ul>
                     </div>
-                </div>
-                <!-- Modal Grupo -->
-                <div class="modal fade" id="modalGrupo" tabindex="-1" aria-labelledby="modalGrupo" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="modalGrupo">Creación de grupo</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <form>
-                            <div class="modal-body">
-                                <label for="nombreGrupo" class="form-label">Nombre del grupo</label>
-                                <input type="text" class="form-control" id="nombreGrupo">
-                                <hr>
-                                <h2>Agregar usuarios</h2>
-                                <label for="inputEmail" class="form-label">Correo Electrónico</label>
-                                <input type="email" class="form-control" id="inputEmail">
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button type="submit" class="btn btn-primary">Crear grupo</button>
-                            </div>
-                            </form>
+
+                    <button type="button" class="btn btn-light btn-2">
+                        <img src="images/carrito-de-supermercado.png" width="27" alt="carrito de compras">
+                        Comprar
+                    </button>
 
 
+                    <div class="dropdown">
+                        <button class="btn btn-light dropdown-toggle btn-3" type="button" data-bs-toggle="dropdown" aria-expanded="true">
+                            <img src="images/user.png" width="27" alt="carrito de compras">
+                            <?php
+                            include "./php/session.php"
+                            ?>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-info">
+                            <li><a class="dropdown-item" href="userConf.php">Configuración</a></li>
+                            <li><a class="dropdown-item" href="login.php">Cerrar sesión</a></li>
+                        </ul>
+                    </div>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <hr>
+                    <!-- Drop Izquierda -->
+                    <div class="btn-group dropright">
+                        <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Grupos
+                        </button>
+                        <div class="dropdown-menu">
+                            <!-- Dropdown menu links -->
+                            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalGrupo">Crear grupo</a> <!-- Aqui crear un modal con los datos del grupo DONE-->
+                            <!-- Agregar PHP aqui cuando x persona pertenezca a grupo o haya creado un grupo agregar opciones -->
+                            <!---<a class="dropdown-item" href="./MisGrupos.php" data-bs-toggle="modal" data-bs-target="#observarGrupoModal">Observar grupos</a>--->
+                            <a class="dropdown-item" href="./MisGrupos.php">Observar grupos</a>
+                            <!--- IF usuario pertecene a grupo then y que aparezca esta opcion de observar recetas filtrada por su grupo --->
+                            <a class="dropdown-item" href="#">Observar recetas de grupo</a>
                         </div>
                     </div>
-                </div>
+                    <!-- Modal Grupo -->
+                    <div class="modal fade" id="modalGrupo" tabindex="-1" aria-labelledby="modalGrupo" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalGrupo">Creación de grupo</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form method="POST">
+                                    <div class="modal-body">
+                                        <label for="nombreGrupo" class="form-label">Nombre del grupo</label>
+                                        <input type="text" name="nombreGr" class="form-control" id="nombreGrupo">
+                                        <hr>
+                                        <h2>Agregar usuarios</h2>
+                                        <label for="inputEmail" class="form-label">Correos Electrónico</label>
+                                        <input type="email" name="correos" class="form-control" id="inputEmail" data-role="tagsinput" data-class="label-info">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        <button type="submit" name="crearGr" class="btn btn-primary">Crear grupo</button>
+                                    </div>
+                                    <?php
+                                    echo "antes";
+                                    include "./php/crearGrupo.php"
+                                    ?>
+                                </form>
 
-                <!-- Modal Observar Grupo -->
-                <div class="modal fade" id="observarGrupoModal" tabindex="-1" aria-labelledby="observarGrupoModal" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="observarModalGrupo">Observación de grupo</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
                             </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal Observar Grupo -->
+                    <div class="modal fade" id="observarGrupoModal" tabindex="-1" aria-labelledby="observarGrupoModal" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="observarModalGrupo">Observación de grupo</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
 
                                 <div class="modal-body">
                                     <label for="nombreGrupo" class="form-label">Nombre del grupo:</label>
@@ -162,7 +167,7 @@ session_start();
                                     <br>
                                     <label for="inputNombreUsuario" class="form-label">Usuario:</label>
                                     <label id="inputNombreUsuario" class="form-label">David</label> <!-- Aqui poner php con nombre del usuario --->
-                                        <br>
+                                    <br>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -172,41 +177,41 @@ session_start();
 
 
 
+                            </div>
                         </div>
                     </div>
-                </div>
 
-<br>
-                <br>
+                    <br>
+                    <br>
 
-                <div class="btn-group dropright">
-                    <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Alergias
-                    </button>
-                    <div class="dropdown-menu">
-                        <!-- Dropdown menu links -->
-                        <a class="dropdown-item" href="#">Agregar alergias</a> <!-- Aqui crear un modal con los datos de las alergias -->
-                        <a class="dropdown-item" href="#">Observar alergias</a>
-                        <a class="dropdown-item" href="#">Remover alergias</a>
+                    <div class="btn-group dropright">
+                        <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Alergias
+                        </button>
+                        <div class="dropdown-menu">
+                            <!-- Dropdown menu links -->
+                            <a class="dropdown-item" href="#">Agregar alergias</a> <!-- Aqui crear un modal con los datos de las alergias -->
+                            <a class="dropdown-item" href="#">Observar alergias</a>
+                            <a class="dropdown-item" href="#">Remover alergias</a>
+                        </div>
                     </div>
+                    <br>
+
+
                 </div>
-                <br>
-
-
-            </div>
-            <div class="col-sm">
-               <hr>
-                <h4>Configuración de cuenta</h4>
+                <div class="col-sm">
+                    <hr>
+                    <h4>Configuración de cuenta</h4>
 
                     <form>
 
                         <div class="form-group">
                             <label for="name">Nombre</label>
-                            <input type="text" class="form-control" id="name"  placeholder="Nombre de usuario">
+                            <input type="text" class="form-control" id="name" placeholder="Nombre de usuario">
                         </div>
                         <div class="form-group">
                             <label for="lastname">Apellido</label>
-                            <input type="text" class="form-control" id="lastname"  placeholder="Apellido de usuario">
+                            <input type="text" class="form-control" id="lastname" placeholder="Apellido de usuario">
                         </div>
 
                         <div class="form-group">
@@ -244,20 +249,18 @@ session_start();
                     </form>
 
 
+                </div>
+
             </div>
+
 
         </div>
 
-
-    </div>
-
-</section>
+    </section>
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous">
-</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+    </script>
 </body>
 
 <div class="modal fade" role="dialog" tabindex="-1" id="myModal">
@@ -274,9 +277,9 @@ session_start();
                         <br>
                         <select>
                             <option value="" selected disabled>Tipo de comida</option>
-                            <option value="vegana" >Vegana</option>
-                            <option value="vegetariana" >Vegetariana</option>
-                            <option value="carnivora" >Carnívora</option>
+                            <option value="vegana">Vegana</option>
+                            <option value="vegetariana">Vegetariana</option>
+                            <option value="carnivora">Carnívora</option>
                             <option value="sinfiltro">Sin preferencia</option>
                         </select>
                         <br>
@@ -306,4 +309,3 @@ session_start();
 <script src="js/Bootstrap-Tags-Input-bootstrap-tagsinput.min.js"></script>
 
 </html>
-

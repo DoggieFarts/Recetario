@@ -15,7 +15,7 @@ if ($res->num_rows > 0) {
                 <h5 class="card-title">'.$row["nombre"].'</h5>
                 <p class="card-text">'.$row["titularG"].'</p>
                 <div class="d-grid gap-1 col-5 mx-auto">
-                <a href="VerReceta.php?id='.$row["idGrupos"].'&idu='.$row["titularG"].'">
+                <a href="Grupo.php?id='.$row["idGrupos"].'&idu='.$row["titularG"].'">
                     <button type="button" class="btn btn-primary" style="--bs-btn-padding-y: .50rem; --bs-btn-padding-x: .50rem; --bs-btn-font-size: .9rem;">
                         <img src="images/vision.png" class="image_see" width="27" alt="ojo de visualizar">
                         Vizualizar Grupo
@@ -27,5 +27,5 @@ if ($res->num_rows > 0) {
     </div>';
     }
 } else {
-    echo"<br><p style='color: rgb(136, 1, 1);'>No cuenta con grupos creados o ni pertenece a alguno</p>";
+    echo"<br><p style='color: rgb(136, 1, 1);'>Este grupo no cuenta con recetas</p>";
 }
