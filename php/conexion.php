@@ -1,7 +1,7 @@
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "";
+$host = "db-mysql-tor1-92654-do-user-8298579-0.b.db.ondigitalocean.com";
+$user = "doadmin";
+$pass = "AVNS_5bhkqW2MIiRPMB-RORT";
 $db = "Recetario";
 /*
 $host = "localhost";
