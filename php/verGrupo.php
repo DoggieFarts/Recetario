@@ -1,11 +1,12 @@
 <?php
 require "./php/conexion.php";
 //echo"sin id";
-$creador = $_SESSION['ID'];
-$sql1 = "SELECT r.nombre AS nombre FROM `recetas` r JOIN `recetas del grupo` rg ON (rg.recetas_idrecetas = r.idrecetas)
+$creador = $_GET['id'];
+$sql1 = "SELECT r.nombre AS nombre,imagen,tipoAlimentacion,Categoria,Region,idrecetas,creador FROM `recetas` r JOIN `recetas del grupo` rg ON (rg.recetas_idrecetas = r.idrecetas)
 JOIN grupos g ON (rg.Grupos_idGrupos=g.idGrupos) WHERE Grupos_idGrupos='$creador'";
 $res = $con->query($sql1);
 //echo"antes del primer if";
+//echo $sql1;
 if ($res->num_rows > 0) {
     while ($row = $res->fetch_assoc()) {
         echo'

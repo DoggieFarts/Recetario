@@ -112,7 +112,7 @@ session_start();
             </h1>
             <center>
                 <h2>
-                    < Tus Recetas>
+                    < Recetas del grupo>
                 </h2>
             </center>
             <br>
@@ -206,8 +206,11 @@ session_start();
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="submit" class="btn btn-primary">Agregar recetas</button>
+                        <button type="submit" name="arecgrup" class="btn btn-primary">Agregar recetas</button>
                     </div>
+                    <?php
+                        include "./php/agregarRecetaGrupo.php"
+                    ?>
             </form>
         </div>
     </div>
