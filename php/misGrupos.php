@@ -27,5 +27,5 @@ if ($res->num_rows > 0) {
     </div>';
     }
 } else {
-    echo"<br><p style='color: rgb(136, 1, 1);'>Este grupo no cuenta con recetas</p>";
+    echo"<br><p style='color: rgb(136, 1, 1);'>No tiene grupos creados ni pertenece a ninguno</p>";
 }
