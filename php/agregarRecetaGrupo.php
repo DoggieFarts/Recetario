@@ -8,7 +8,7 @@ if (isset($_POST['arecgrup'])) {
             $idu= $_SESSION['ID'];
             $sql = "INSERT INTO `recetas del grupo` (`Grupos_idGrupos`, `recetas_idrecetas`,`recetas_creador`) 
             VALUES ('$idG' , '$idR','$idu')";
-            echo $sql;
+            //echo $sql;
             try {
                 if ($con->query($sql) == true) {
                     //header("Location:Asignacion Alumnos a Grupos.php");

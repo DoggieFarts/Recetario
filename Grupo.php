@@ -117,12 +117,13 @@ session_start();
             </center>
             <br>
             <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#observarGrupoModal">Agregar receta</button>
-            <div class="row row-cols-1 row-cols-md-3 g-2">
-                <!--Empiezan las cards -->
-                <?php
-                include "./php/verGrupo.php";
-                ?>
-            </div>
+
+            <!--Empiezan las cards -->
+            <?php
+            include "./php/agregarRecetaGrupo.php";
+            include "./php/verGrupo.php";
+            ?>
+        </div>
         </div>
     </section>
 
@@ -208,12 +209,74 @@ session_start();
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                         <button type="submit" name="arecgrup" class="btn btn-primary">Agregar recetas</button>
                     </div>
-                    <?php
-                        include "./php/agregarRecetaGrupo.php"
-                    ?>
             </form>
         </div>
     </div>
+
+    </div>
+
+    <!-- Modal usuarios Grupo -->
+    <div class="modal fade" id="modalGrupo" tabindex="-1" aria-labelledby="modalGrupo" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalGrupo">Creación de grupo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form method="POST">
+                    <div class="modal-body">
+                        <h2>Agregar usuarios</h2>
+                        <label for="inputEmail" class="form-label">Correos Electrónico</label>
+                        <input type="email" name="correos" class="form-control" id="inputEmail" data-role="tagsinput" data-class="label-info">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" name="crearGr" class="btn btn-primary">Agregar usuarios a grupo</button>
+                    </div>
+                    <?php
+                    include "./php/usGrupos.php"
+                    ?>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!--Modal de recetas-->
+    <div class="modal fade" id="EliminarUsModal" tabindex="-1" aria-labelledby="EliminarUsModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <form method="POST">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="observarModalGrupo">Eliminar usuarios</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <label for="nombreGrupo" class="form-label">usuarios:</label><!-- Aqui poner php con nombre del grupo --->
+                        <hr>
+                        <table class='table table-striped  border = "1" ' id="table1">
+                            <thead>
+                                <tr>
+                                    <th>Usuario</th>
+                                    <th>Correo</th>
+                                    <th>Check</th>
+                                </tr>
+                            </thead>
+                            <?php
+                            include "./php/eliminarUsGrupo.php";
+                            include "./php/verUsGrupos.php";
+                            ?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" name="elim" class="btn btn-primary">Elimiar Usuarios</button>
+                    </div>
+            </form>
+        </div>
     </div>
 
     <!--footer-->
