@@ -3,14 +3,14 @@ session_start();
 if(isset($_POST['cerrars'])){
                 session_destroy();
 }
-require "./php/conexion.php";            
+require "./php/conexion.php";          
 if(isset($_POST['correo'])){
 $usuario = $_POST['correo'];
   if(isset($_POST['password'])){
     $Conl = $_POST['password'];
     $sql="SELECT idusuarios, CONCAT(nombre,' ',apP,' ',apM) AS nombre FROM `usuarios` WHERE correo = '$usuario' AND Contraseña = '$Conl'";
-    $res = $con->query($sql);
-                                   
+    //echo $sql;
+    $res = $con->query($sql);                                   
     if($res->num_rows > 0){
       while($row=$res->fetch_assoc()){
         $ID = $row["idusuarios"];

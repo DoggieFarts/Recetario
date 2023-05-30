@@ -2,7 +2,8 @@
 require "./php/conexion.php";
 //echo"sin id";
 $creador = $_SESSION['ID'];
-$sql1 = "SELECT * FROM `grupos` gr JOIN miembrosGrupo mg ON (gr.idGrupos=mg.grupos_idGrupos) WHERE titularG='$creador' OR usuarios_idusuarios='$creador' ";
+$sql1 = "SELECT * FROM `grupos` gr JOIN miembrosGrupo mg ON (gr.idGrupos=mg.grupos_idGrupos) 
+WHERE titularG='$creador' OR usuarios_idusuarios='$creador' GROUP BY gr.idGrupos";
 $res = $con->query($sql1);
 //echo"antes del primer if";
 if ($res->num_rows > 0) {
