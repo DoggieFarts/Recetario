@@ -2,6 +2,23 @@
 require "./php/conexion.php";
 //echo"sin id";
 $creador = $_GET['id'];
+$sqlu ="SELECT * FROM `grupos` WHERE idGrupos='$creador'";
+//echo $sqlu;
+$res = $con->query($sqlu);
+//echo"antes del primer if";
+//
+if ($res->num_rows > 0) {
+    while ($row = $res->fetch_assoc()) {
+        $titular = $row["titularG"];
+        $idu= $_SESSION['ID'];
+        if($idu==$titular){
+            echo'<button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalGrupo">Agregar usuarios</button>
+            <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#EliminarUsModal">Eliminar usuarios</button>';
+        }
+        
+    }
+}
+
 $sql1 = "SELECT r.nombre AS nombre,imagen,tipoAlimentacion,Categoria,Region,idrecetas,creador FROM `recetas` r JOIN `recetas del grupo` rg ON (rg.recetas_idrecetas = r.idrecetas)
 JOIN grupos g ON (rg.Grupos_idGrupos=g.idGrupos) WHERE Grupos_idGrupos='$creador'";
 $res = $con->query($sql1);
@@ -10,6 +27,7 @@ $res = $con->query($sql1);
 if ($res->num_rows > 0) {
     while ($row = $res->fetch_assoc()) {
         echo'
+<div class="row row-cols-1 row-cols-md-3 g-2">
     <div class="col">
         <div class="card ">
             <img src="'.$row["imagen"].'" class="card-img-top" alt="...">
