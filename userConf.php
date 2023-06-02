@@ -112,8 +112,6 @@ session_start();
                             <!-- Agregar PHP aqui cuando x persona pertenezca a grupo o haya creado un grupo agregar opciones -->
                             <!---<a class="dropdown-item" href="./MisGrupos.php" data-bs-toggle="modal" data-bs-target="#observarGrupoModal">Observar grupos</a>--->
                             <a class="dropdown-item" href="./MisGrupos.php">Observar grupos</a>
-                            <!--- IF usuario pertecene a grupo then y que aparezca esta opcion de observar recetas filtrada por su grupo --->
-                            <a class="dropdown-item" href="#">Observar recetas de grupo</a>
                         </div>
                     </div>
                     <!-- Modal Grupo -->
@@ -180,6 +178,80 @@ session_start();
                             </div>
                         </div>
                     </div>
+                    <!-- Modal alergias -->
+                    <div class="modal fade" id="alergiasmodal" tabindex="-1" aria-labelledby="alergiasmodal" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <form method="POST">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="observarModalGrupo">Añadir ingredientes que pueda producirle alergia</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <label for="nombreGrupo" class="form-label">Ingredientes:</label><!-- Aqui poner php con nombre del grupo --->
+                                        <hr>
+                                        <table class='table table-striped  border = "1" ' id="table1">
+                                            <thead>
+                                                <tr>
+                                                    <th>Ingrediente</th>
+                                                    <th>Check</th>
+                                                </tr>
+                                            </thead>
+                                            <?php
+                                            include "./php/agregarAlergias.php";
+                                            include "./php/ingredientesAlergia.php";
+                                            ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        <button type="submit" name="inga" class="btn btn-primary">Agregar alergias</button>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                    <!-- Modal ver alergias -->
+                    <div class="modal fade" id="veralergiasmodal" tabindex="-1" aria-labelledby="veralergiasmodal" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <form method="POST">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="observarModalGrupo">Alergias</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <label for="nombreGrupo" class="form-label">Ingredientes:</label><!-- Aqui poner php con nombre del grupo --->
+                                        <hr>
+                                        <table class='table table-striped  border = "1" ' id="table1">
+                                            <thead>
+                                                <tr>
+                                                    <th>Ingrediente</th>
+                                                    <th>Check</th>
+                                                </tr>
+                                            </thead>
+                                            <?php
+                                            include "./php/eliminarAlergias.php";
+                                            include "./php/veralergias.php";
+                                            ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        <button type="submit" name="ElimA" class="btn btn-primary">Eliminar alergias</button>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
 
                     <br>
                     <br>
@@ -190,9 +262,8 @@ session_start();
                         </button>
                         <div class="dropdown-menu">
                             <!-- Dropdown menu links -->
-                            <a class="dropdown-item" href="#">Agregar alergias</a> <!-- Aqui crear un modal con los datos de las alergias -->
-                            <a class="dropdown-item" href="#">Observar alergias</a>
-                            <a class="dropdown-item" href="#">Remover alergias</a>
+                            <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#alergiasmodal" >Agregar alergias</a> <!-- Aqui crear un modal con los datos de las alergias -->
+                            <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#veralergiasmodal">Observar alergias</a>
                         </div>
                     </div>
                     <br>
@@ -202,52 +273,38 @@ session_start();
                 <div class="col-sm">
                     <hr>
                     <h4>Configuración de cuenta</h4>
-
-                    <form>
-
-                        <div class="form-group">
-                            <label for="name">Nombre</label>
-                            <input type="text" class="form-control" id="name" placeholder="Nombre de usuario">
-                        </div>
-                        <div class="form-group">
-                            <label for="lastname">Apellido</label>
-                            <input type="text" class="form-control" id="lastname" placeholder="Apellido de usuario">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="Password">Contraseña</label>
-                            <input type="password" class="form-control" id="Password" placeholder="Contraseña">
-                        </div>
-                        <div class="form-group">
-                            <label for="PasswordValidation">Confirmación</label>
-                            <input type="password" class="form-control" id="PasswordValidation" placeholder="Confirmación">
-                        </div>
-                        <hr>
-                        <h4>Compartir con redes sociales</h4>
-                        <ul class="col-3 list-unstyled">
-
-                            <li class="d-flex justify-content-between">
-                                <a href="https://facebook.com" class="text-reset">
-                                    <i class="fab fa-facebook-f fa-3x icons"></i>
-                                </a>
-
-                                <a href="whatsapp://send?text=Prueba la nueva aplicación de recetario!" class="text-reset" data-action="share/whatsapp/share">
-                                    <i class="fa-brands fa-whatsapp fa-3x icons"></i>
-                                </a>
-
-                                <a href="https://twitter.com" class="text-reset">
-                                    <i class="fa-brands fa-square-twitter fa-3x icons"></i>
-                                </a>
-
-                                <a href="https://pinterest.com" class="text-reset">
-                                    <i class="fa-brands fa-pinterest fa-3x icons"></i>
-                                </a>
-                            </li>
-                        </ul>
-
-                        <button type="submit" class="btn btn-warning">Guardar cambios</button>
+                    <?php
+                    include "./php/editarUs.php";
+                    ?>
+                    <form method="POST">
+                        <?php
+                        include "./php/verMisdatos.php";
+                        ?>
+                        </br>
+                        <button type="submit" name="cambios" class="btn btn-warning">Guardar cambios</button>
                     </form>
+                    <hr>
+                    <h4>Compartir con redes sociales</h4>
+                    <ul class="col-3 list-unstyled">
 
+                        <li class="d-flex justify-content-between">
+                            <a href="https://facebook.com" class="text-reset">
+                                <i class="fab fa-facebook-f fa-3x icons"></i>
+                            </a>
+
+                            <a href="whatsapp://send?text=Prueba la nueva aplicación de recetario!" class="text-reset" data-action="share/whatsapp/share">
+                                <i class="fa-brands fa-whatsapp fa-3x icons"></i>
+                            </a>
+
+                            <a href="https://twitter.com" class="text-reset">
+                                <i class="fa-brands fa-square-twitter fa-3x icons"></i>
+                            </a>
+
+                            <a href="https://pinterest.com" class="text-reset">
+                                <i class="fa-brands fa-pinterest fa-3x icons"></i>
+                            </a>
+                        </li>
+                    </ul>
 
                 </div>
 
