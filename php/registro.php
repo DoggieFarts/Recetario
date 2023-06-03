@@ -1,5 +1,5 @@
 <?php
-require "./php/conexion.php";
+include_once "conexion.php";
 if (isset($_POST['mandar'])) {
     if (isset($_POST['name'])) {
         $usuario = $_POST['name'];
