@@ -25,7 +25,7 @@ if (isset($_POST['mandar'])) {
                         ($IdUs,'$usuario','$app','$apm','$cont','$corr')";
                         echo $sql;
                         if ($con->query($sql) == true) {
-                            header("Location:login.php");
+                            header("Location:../login.php");
                         } else {
                             echo "<br><p style='color: red;'>Error al guardar</p>";
                         }
