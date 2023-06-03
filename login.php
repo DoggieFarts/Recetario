@@ -32,7 +32,7 @@
 
   <div class="box">
     <span class="borderLine"></span>
-    <form method="post">
+    <form method="post" action="php/log.php">
       <h2>Inicia sesión</h2>
       <div class="inputBox">
         <input type="text" name="correo" required="required">
@@ -50,7 +50,7 @@
         <a href="singn-in.php">Regístrarse</a>
       </div>
       <input type="submit" value="Inicia sesión">
-  
+
     </form>
   </div>
   <div class="clearfix"></div>

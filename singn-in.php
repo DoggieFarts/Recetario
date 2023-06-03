@@ -22,7 +22,7 @@
 
 <div class="box">
   <span class="borderLine"></span>
-  <form method="post" autocomplete="off" >
+  <form method="post" autocomplete="off" action="php/registro.php">
     <h2>Registro de usuario</h2>
     <div class="inputBox">
       <input type="text" required="required" name="name">
@@ -58,9 +58,7 @@
 
     </div>
     <input name="mandar" type="submit">
-    <?php
-    include "./php/registro.php";
-    ?>
+
   </form>
 </div>
 <div class="clearfix"></div>
