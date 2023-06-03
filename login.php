@@ -50,10 +50,7 @@
         <a href="singn-in.php">Regístrarse</a>
       </div>
       <input type="submit" value="Inicia sesión">
-      <?php
-          // echo'<p>antes</p>';
-      include "./php/log.php";
-      ?>
+  
     </form>
   </div>
   <div class="clearfix"></div>
