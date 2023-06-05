@@ -1,5 +1,5 @@
 <?php
-include_once "conexion.php";
+require "./php/conexion.php";
 if (isset($_POST['mandar'])) {
     if (isset($_POST['name'])) {
         $usuario = $_POST['name'];
@@ -25,7 +25,7 @@ if (isset($_POST['mandar'])) {
                         ($IdUs,'$usuario','$app','$apm','$cont','$corr')";
                         echo $sql;
                         if ($con->query($sql) == true) {
-                            header("Location:../login.php");
+                            header("Location:login.php");
                         } else {
                             echo "<br><p style='color: red;'>Error al guardar</p>";
                         }

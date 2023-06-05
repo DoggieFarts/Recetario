@@ -1,3 +1,7 @@
+<?php
+// echo'<p>antes</p>';
+include "./php/log.php";
+?>
 <!DOCTYPE html>
 <html>
 
@@ -17,8 +21,7 @@
   <!--Bootstrap-->
 
   <!-- Google Font Link Icons-->
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
 </head>
 
@@ -32,7 +35,7 @@
 
   <div class="box">
     <span class="borderLine"></span>
-    <form method="post" action="php/log.php">
+    <form method="post">
       <h2>Inicia sesión</h2>
       <div class="inputBox">
         <input type="text" name="correo" required="required">
@@ -50,7 +53,6 @@
         <a href="singn-in.php">Regístrarse</a>
       </div>
       <input type="submit" value="Inicia sesión">
-
     </form>
   </div>
   <div class="clearfix"></div>

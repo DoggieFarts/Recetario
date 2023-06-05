@@ -77,7 +77,9 @@ session_start();
             <button class="btn btn-light dropdown-toggle btn-3" type="button" data-bs-toggle="dropdown"
               aria-expanded="true">
               <img src="images/user.png" width="27" alt="carrito de compras">
-
+              <?php
+              include "./php/session.php"
+              ?>
             </button>
             <ul class="dropdown-menu dropdown-menu-info">
               <li><a class="dropdown-item" href="userConf.php">Configuración</a></li>

@@ -1,3 +1,6 @@
+<?php
+include "./php/registro.php";
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -20,54 +23,53 @@
 <body>
 
 
-<div class="box">
-  <span class="borderLine"></span>
-  <form method="post" autocomplete="off" action="php/registro.php">
-    <h2>Registro de usuario</h2>
-    <div class="inputBox">
-      <input type="text" required="required" name="name">
-      <span>Nombre</span>
-      <i></i>
-    </div>
+  <div class="box">
+    <span class="borderLine"></span>
+    <form method="post" autocomplete="off">
+      <h2>Registro de usuario</h2>
+      <div class="inputBox">
+        <input type="text" required="required" name="name">
+        <span>Nombre</span>
+        <i></i>
+      </div>
 
-    <div class="inputBox">
-      <input type="text" required="required" name="ApellidoP">
-      <span>Apellido paterno</span>
-      <i></i>
-    </div>
+      <div class="inputBox">
+        <input type="text" required="required" name="ApellidoP">
+        <span>Apellido paterno</span>
+        <i></i>
+      </div>
 
-    <div class="inputBox">
-      <input type="text" required="required" name="ApellidoM">
-      <span>Apellido materno</span>
-      <i></i>
-    </div>
+      <div class="inputBox">
+        <input type="text" required="required" name="ApellidoM">
+        <span>Apellido materno</span>
+        <i></i>
+      </div>
 
-    <div class="inputBox">
-      <input type="email" required="required" name="correo" autocomplete="off" >
-      <span>Correo electrónico</span>
-      <i></i>
-    </div>
+      <div class="inputBox">
+        <input type="email" required="required" name="correo" autocomplete="off">
+        <span>Correo electrónico</span>
+        <i></i>
+      </div>
 
-    <div class="inputBox">
-      <input type="password" required="required" name="contraseña">
-      <span>Contraseña</span>
-      <i></i>
-    </div>
-    <div class="links">
-      <a href="login.php">¿Iniciar sesión?</a>
+      <div class="inputBox">
+        <input type="password" required="required" name="contraseña">
+        <span>Contraseña</span>
+        <i></i>
+      </div>
+      <div class="links">
+        <a href="login.php">¿Iniciar sesión?</a>
 
-    </div>
-    <input name="mandar" type="submit">
-
-  </form>
-</div>
-<div class="clearfix"></div>
-
+      </div>
+      <input name="mandar" type="submit">
+    </form>
+  </div>
+  <div class="clearfix"></div>
 
 
-<!-- Pagina para iconos -->
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <!-- Pagina para iconos -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
