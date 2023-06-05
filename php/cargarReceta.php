@@ -135,7 +135,7 @@ if (isset($_POST['nombre'])) {
                         //echo $sqlpa;
                         if ($con->query($sqlpa) == true) {
                             if ($x == $ning1)
-                                header("Location:./index.php");
+                                header("Location:./MisRecetas.php");
                         } else {
                             echo "<br><p style='color: rgb(136, 1, 1);'>Error al guardar relacion</p>";
                         }
