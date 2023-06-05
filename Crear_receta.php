@@ -1,5 +1,7 @@
 <?php
 session_start();
+include "php/sessionestado.php";
+include "php/cargarReceta.php";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -82,10 +84,10 @@ session_start();
               ?>
             </button>
             <ul class="dropdown-menu dropdown-menu-info">
-<<<<<<< HEAD
+
               <li><a class="dropdown-item" href="userConf.php">Configuración</a></li>
               <li><a class="dropdown-item" href="login.php">Cerrar sesión</a></li>
-=======
+
               <li><a class="dropdown-item" href="#">Configuración</a></li>
               <li><a class="dropdown-item" href="#">Preferencias </a></li>
               <li>
@@ -93,10 +95,6 @@ session_start();
                   </button>
                 </form>
               </li>
-<<<<<<< HEAD
->>>>>>> 7111fe8 (imagenes)
-=======
->>>>>>> Axel
             </ul>
           </div>
 
@@ -253,9 +251,6 @@ session_start();
         </div>
       </div>
     </section>
-    <?php
-    include "php/cargarReceta.php";
-    ?>
   </form>
 
   <br>
