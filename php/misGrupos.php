@@ -11,7 +11,6 @@ if ($res->num_rows > 0) {
         echo'
     <div class="col">
         <div class="card ">
-            <img src="'.$row["imagen"].'" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">'.$row["nombre"].'</h5>
                 <p class="card-text">'.$row["titularG"].'</p>

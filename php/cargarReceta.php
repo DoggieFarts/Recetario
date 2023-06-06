@@ -26,9 +26,9 @@ if (isset($_POST['nombre'])) {
             if (mkdir($carpeta, 0777, true)) {
                 $destino =  $carpeta ."/". $Idres . $nombrei;
                 if (move_uploaded_file($tmp_name, $destino)) {
-                    echo "se subio";
+                    //echo "se subio";
                 } else {
-                    echo $_FILES['imagens']['error'];
+                    //echo $_FILES['imagens']['error'];
                 }
             } else {
                 die('Fallo al crear las carpetas...');
@@ -36,9 +36,9 @@ if (isset($_POST['nombre'])) {
         }else{
             $destino =  $carpeta ."/". $Idres . $nombrei;
                 if (move_uploaded_file($tmp_name, $destino)) {
-                    echo "se subio";
+                    //echo "se subio";
                 } else {
-                    echo $_FILES['imagens']['error'];
+                    //echo $_FILES['imagens']['error'];
                 }
         }
         $nombre = $_POST['nombre'];
@@ -115,9 +115,9 @@ if (isset($_POST['nombre'])) {
                             if (mkdir($carpeta, 0777, true)) {
                                 $destino =  $carpeta ."/". $Idres .$pason. $nombrei;
                                 if (move_uploaded_file($tmp_name, $destino)) {
-                                    echo "se subio";
+                                    //echo "se subio";
                                 } else {
-                                    echo $_FILES['imp'.$x]['error'];
+                                    //echo $_FILES['imp'.$x]['error'];
                                 }
                             } else {
                                 die('Fallo al crear las carpetas...');
@@ -125,9 +125,9 @@ if (isset($_POST['nombre'])) {
                         }else{
                             $destino =  $carpeta ."/". $Idres .$pason. $nombrei;
                                 if (move_uploaded_file($tmp_name, $destino)) {
-                                    echo "se subio";
+                                    //echo "se subio";
                                 } else {
-                                    echo $_FILES['imp'.$x]['error'];
+                                    //echo $_FILES['imp'.$x]['error'];
                                 }
                         }
                         $sqlpa = "INSERT INTO Pasos (numPasos,paso,recetas_idrecetas,recetas_creador,imgpaso)

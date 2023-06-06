@@ -16,7 +16,6 @@ if (isset($_POST['arecgrup'])) {
                 } else {
                     echo "<br><p style='color: blue;'>Error al asignar</p>";
                 }
-                header("Location:Asignacion Alumnos a Padres.php");
             } catch (mysqli_sql_exception $e) {
                 echo "<br><p style='color: blue;'>Error, esta receta ya existe en este grupo</p>";
             }
