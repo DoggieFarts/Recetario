@@ -8,5 +8,19 @@
       <jdbc-url>jdbc:mysql://db-mysql-nyc1-70273-do-user-8298579-0.b.db.ondigitalocean.com:25060/recetario</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="ajcmgufpgx@161.35.98.43 [2]" uuid="7d3b6a32-3e32-471f-83e3-53e3eb45e458">
+      <driver-ref>mariadb</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mariadb://161.35.98.43:3306/ajcmgufpgx</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+    <data-source source="LOCAL" name="ajcmgufpgx@161.35.98.43" uuid="ae0cbfef-3a0c-487e-a9ca-f213faca1579">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://161.35.98.43:3306/ajcmgufpgx</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
