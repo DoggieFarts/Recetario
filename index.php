@@ -183,7 +183,12 @@ include "./php/sessionestado.php";
   <!--Otra parte -->
   <section>
     <div class="container">
-      <h1 class="titulosIndex">Buenas (estado del dia) user</h1>
+    <h1>Buen dia
+        <?php
+        $usuario = $_SESSION['Usuario'];
+        echo $usuario;
+        ?>
+      </h1>
       <center>
       <h2 class="titulosIndex">
         < Comidas para ti >

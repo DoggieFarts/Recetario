@@ -84,5 +84,5 @@ if ($res->num_rows > 0) {
   }  
     }
 } else {
-    echo"<br><p style='color: rgb(136, 1, 1);'>No cuenta con recetas cargadas</p>";
+    echo"<br><p style='color: rgb(136, 1, 1);'>Esta receta ya no existe</p>";
 }
