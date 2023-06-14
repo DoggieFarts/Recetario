@@ -47,7 +47,7 @@ if (isset($_POST['cambios'])) {
         $cont = $_POST['contraseña'];
         //echo $cont;
         if (isset($_POST['contrasenac'])&&!empty($_POST['contrasenac'])) {
-            echo $sql;
+            //echo $sql;
             $contc = $_POST['contrasenac'];
             if ($cont == $contc) {
                 if ($n == 0) {

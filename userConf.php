@@ -1,7 +1,8 @@
 <?php
 session_start();
 include "./php/sessionestado.php";
-include "./php/crearGrupo.php"
+include "./php/crearGrupo.php";
+include "./php/editarUs.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -271,9 +272,6 @@ include "./php/crearGrupo.php"
                 <div class="col-sm">
                     <hr>
                     <h4>Configuración de cuenta</h4>
-                    <?php
-                    include "./php/editarUs.php";
-                    ?>
                     <form method="POST">
                         <?php
                         include "./php/verMisdatos.php";
