@@ -25,7 +25,6 @@ if (isset($_POST['crearGr'])) {
                     echo "<br><p style='color: blue;'>Error, este usuario ya esta en este grupo en este grupo</p>";
                 }
                 }
-                header("Location:./MisGrupos.php");
             }
         }
     }

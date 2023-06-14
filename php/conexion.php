@@ -7,9 +7,9 @@ $db = "Recetario";
 
 
 /*
-$host = "db-mysql-nyc1-70273-do-user-8298579-0.b.db.ondigitalocean.com";
-$user = "doadmin";
-$pass = "AVNS_bjyOCv0beJKSKqBBACt";
-$db = "Recetario";*/
+$host = "localhost";
+$user = "id20858201_axel77755";
+$pass = "(qu6rk7558i!{UoQ";
+$db = "id20858201_recetario";*/
 $con= new mysqli($host,$user,$pass,$db)or die("problemas al conectar");
 ?>

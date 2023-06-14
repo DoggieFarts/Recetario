@@ -1,6 +1,7 @@
 <?php
 session_start();
 include "./php/sessionestado.php";
+include "./php/crearGrupo.php"
 ?>
 <!DOCTYPE html>
 <html>
@@ -259,7 +260,7 @@ include "./php/sessionestado.php";
                         </button>
                         <div class="dropdown-menu">
                             <!-- Dropdown menu links -->
-                            <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#alergiasmodal" >Agregar alergias</a> <!-- Aqui crear un modal con los datos de las alergias -->
+                            <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#alergiasmodal">Agregar alergias</a> <!-- Aqui crear un modal con los datos de las alergias -->
                             <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#veralergiasmodal">Observar alergias</a>
                         </div>
                     </div>

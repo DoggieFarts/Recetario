@@ -86,10 +86,6 @@ include "php/cargarReceta.php";
             <ul class="dropdown-menu dropdown-menu-info">
 
               <li><a class="dropdown-item" href="userConf.php">Configuración</a></li>
-              <li><a class="dropdown-item" href="login.php">Cerrar sesión</a></li>
-
-              <li><a class="dropdown-item" href="#">Configuración</a></li>
-              <li><a class="dropdown-item" href="#">Preferencias </a></li>
               <li>
                 <form method="post" action="login.php"><button type="submit" name="cerrars"> <a class="dropdown-item">Cerrar sesión</a>
                   </button>
@@ -247,7 +243,7 @@ include "php/cargarReceta.php";
     <section>
       <div class="container">
         <div class="d-grid gap-2">
-          <button class="btn btn-success" type="submit">Guardar</button>
+          <button class="btn btn-success" name="GuardarR" type="submit">Guardar</button>
         </div>
       </div>
     </section>

@@ -23,7 +23,7 @@ if (isset($_POST['mandar'])) {
                         $cont = $_POST['contraseña'];
                         $sql = "INSERT INTO `usuarios` (`idusuarios`, `nombre`, `apP`, `apM`, `Contraseña`, `correo`)VALUES
                         ($IdUs,'$usuario','$app','$apm','$cont','$corr')";
-                        echo $sql;
+                        //echo $sql;
                         if ($con->query($sql) == true) {
                             header("Location:login.php");
                         } else {

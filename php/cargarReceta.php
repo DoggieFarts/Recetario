@@ -1,6 +1,7 @@
 <?php
 require "./php/conexion.php";
 //echo"sin id";
+if(isset($_POST['GuardarR'])){
 $sql1 = "SELECT * FROM `recetas`";
 $error = 0;
 
@@ -156,4 +157,5 @@ if (isset($_POST['nombre'])) {
     }
 } else {
     echo "<br><p style='color: rgb(136, 1, 1);'>Nombre de la reseta vacio</p>";
+}
 }

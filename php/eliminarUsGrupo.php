@@ -17,6 +17,5 @@ if (isset($_POST['elim'])) {
             }
             
         }
-        header("Location:./MisGrupos.php");
     }
 }
