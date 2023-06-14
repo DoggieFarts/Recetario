@@ -136,10 +136,6 @@ include "./php/sessionestado.php";
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                                         <button type="submit" name="crearGr" class="btn btn-primary">Crear grupo</button>
                                     </div>
-                                    <?php
-                                    //echo "antes";
-                                    include "./php/crearGrupo.php"
-                                    ?>
                                 </form>
 
 
