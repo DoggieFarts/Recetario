@@ -18,6 +18,5 @@ if (isset($_POST['inga'])) {
             }
             
         }
-        header("Location:./MisGrupos.php");
     }
 }

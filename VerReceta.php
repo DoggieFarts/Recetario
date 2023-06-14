@@ -1,6 +1,7 @@
 <?php
 session_start();
 include "./php/sessionestado.php";
+include "./php/eliminarReceta.php";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -46,7 +47,7 @@ include "./php/sessionestado.php";
         </a>
 
         <form class="d-flex" role="search" method="GET" action="resultadoBusqueda.php">
-          <input name="barrbus"class="form-control me-1" type="text" placeholder="Buscar" aria-label="Search" size="40">
+          <input name="barrbus" class="form-control me-1" type="text" placeholder="Buscar" aria-label="Search" size="40">
           <a href="#myModal" data-bs-toggle="modal"><img src="images/buscar.png" width="30" alt="buscador">
           </a>
           <!--<button class="btn btn-outline-success" type="submit">Buscar</button>-->
@@ -104,33 +105,6 @@ include "./php/sessionestado.php";
     </div>
   </section>
 
-  <!--Otra parte -->
-  <!--<section>
-  <div class="container">
-
-    <h1>Buenas (estado del dia) user</h1>
-
-    <div class="card mb-12" style="max-width: 540px;">
-      <div class="row g-0">
-        <div class="col-mb-12">
-          <img src="images/comida.jpg" class="img-fluid rounded-start" alt="...">
-        </div>
-        <div class="col-md-12">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
-              This content is a little bit longer.</p>
-            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</section>
-<br>
-<br>-->
-
   <section class="mostrar_receta">
     <div class="container">
 
@@ -150,13 +124,13 @@ include "./php/sessionestado.php";
         <div class="row g-0">
           <div class="col-md-4">
             <?php
-              include"./php/verReceta.php";
+            include "./php/verReceta.php";
             ?>
-            </div>
           </div>
         </div>
-
       </div>
+
+    </div>
     </div>
   </section>
   <br>
@@ -167,6 +141,11 @@ include "./php/sessionestado.php";
     <div class="container">
       <div class="d-grid gap-2 col-6 mx-auto">
         <button onclick="imprimirPagina();" type="button" class="btn btn-outline-primary">Imprimir</button>
+        <?php
+        if ($_GET["idu"] == $_SESSION['ID']) {
+          echo '<button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#modalEliminar">Eliminar</button>';
+        }
+        ?>
         <div class="btn-group">
           <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             Compartir
@@ -215,8 +194,8 @@ include "./php/sessionestado.php";
 </body>
 
 
- <!--Modal de busqueda-->
- <div class="modal fade" role="dialog" tabindex="-1" id="myModal">
+<!--Modal de busqueda-->
+<div class="modal fade" role="dialog" tabindex="-1" id="myModal">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -240,7 +219,7 @@ include "./php/sessionestado.php";
             <input type="text" name="ingredientes" id="ingredientes" data-role="tagsinput" data-class="label-info" placeholder="Ingredientes" />
 
             <label for="ingredientesN">Ingredientes no deseados</label>
-            <input type="text"  name="ingredientesn"id="ingredientesN" data-role="tagsinput" data-class="label-info" placeholder="Ingredientes no deseados" />
+            <input type="text" name="ingredientesn" id="ingredientesN" data-role="tagsinput" data-class="label-info" placeholder="Ingredientes no deseados" />
             <br>
             <div>
               <button class="btn btn-primary" name="buscEx" type="submit">Buscar</button>
@@ -256,6 +235,26 @@ include "./php/sessionestado.php";
     </div>
   </div>
 </div>
+
+<!-- Modal Eliminar -->
+<div class="modal fade" id="modalEliminar" tabindex="-1" aria-labelledby="modalEliminar" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalGrupo">¿Desea eliminar la receta?</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <form method="POST">
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        <button type="submit" name="EliminarR" class="btn btn-primary">Eliminar</button>
+                                    </div>
+                                </form>
+
+
+                            </div>
+                        </div>
+                    </div>
 
 <!--footer-->
 <footer class="bg-dark text-white py-4">

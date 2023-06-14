@@ -3,7 +3,7 @@ require "./php/conexion.php";
 //echo"sin id";
 
 if (isset($_POST['crearGr'])) {
-    if (isset($_POST['nombreGr'])) {
+    if (isset($_POST['nombreGr'])&&!empty($_POST['nombreGr'])) {
         $sql1 = "SELECT * FROM `grupos`";
         $error = 0;
 
